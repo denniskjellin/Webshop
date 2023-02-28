@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using backend.Data;
+using AuthTest.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
