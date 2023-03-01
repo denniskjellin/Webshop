@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using backend.Data;
 using backend.Models;
 
-namespace backend.Controlles
+namespace backend.Controllers
 {
     public class CategoryController : Controller
     {
