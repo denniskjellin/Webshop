@@ -68,10 +68,13 @@ namespace backend.Controllers
         {
             if (ModelState.IsValid)
             {
+                    // Check if image is uploaded
                  if(product.ImageFile != null) {
+
                     // Save image to wwwroot
                     string fileName = Path.GetFileNameWithoutExtension(product.ImageFile.FileName);
                     string extension = Path.GetExtension(product.ImageFile.FileName);
+                    // add timestamp to image name, every image name is then unique
                     product.ImageName = fileName = DateTime.Now.ToString("yymmssfff") + fileName + extension;
                     string path = Path.Combine(wwwRootPath + "/productimages/", fileName);
 
