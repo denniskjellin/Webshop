@@ -178,6 +178,7 @@ namespace backend.Migrations
                     Title = table.Column<string>(type: "TEXT", nullable: false),
                     Description = table.Column<string>(type: "TEXT", nullable: false),
                     Price = table.Column<decimal>(type: "TEXT", nullable: false),
+                    IsHighlighted = table.Column<bool>(type: "INTEGER", nullable: false),
                     ImageName = table.Column<string>(type: "TEXT", nullable: true),
                     ImageAlt = table.Column<string>(type: "TEXT", nullable: false),
                     CategoryId = table.Column<int>(type: "INTEGER", nullable: false)

@@ -64,15 +64,15 @@ namespace backend.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProductId,Title,Description,Price,ImageFile,ImageAlt,CategoryId")] Product product)
+        public async Task<IActionResult> Create([Bind("ProductId,Title,Description,Price,IsHighlighted,ImageFile,ImageAlt,CategoryId")] Product product)
         {
             if (ModelState.IsValid)
             {
-                if(product.ImageFile != null) {
+                 if(product.ImageFile != null) {
                     // Save image to wwwroot
                     string fileName = Path.GetFileNameWithoutExtension(product.ImageFile.FileName);
                     string extension = Path.GetExtension(product.ImageFile.FileName);
-                    product.ImageName = fileName = DateTime.Now.ToString("yymmssfff") +fileName + extension;
+                    product.ImageName = fileName = DateTime.Now.ToString("yymmssfff") + fileName + extension;
                     string path = Path.Combine(wwwRootPath + "/productimages/", fileName);
 
                     using (var fileStream = new FileStream(path, FileMode.Create))
@@ -81,16 +81,14 @@ namespace backend.Controllers
                     }
 
                 } else {
-                    product.ImageName ="empty.jpg";
+                    product.ImageName = "empty.jpg";
                 }
-                
                 _context.Add(product);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Name", product.CategoryId);
             return View(product);
-            
         }
 
         // GET: Product/Edit/5
@@ -115,7 +113,7 @@ namespace backend.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ProductId,Title,Description,Price,ImageName,ImageAlt,CategoryId")] Product product)
+        public async Task<IActionResult> Edit(int id, [Bind("ProductId,Title,Description,Price,IsHighlighted,ImageName,ImageAlt,CategoryId")] Product product)
         {
             if (id != product.ProductId)
             {

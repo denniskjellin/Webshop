@@ -11,7 +11,7 @@ using backend.Data;
 namespace backend.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230301090024_InitialCreate")]
+    [Migration("20230302161718_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -251,6 +251,9 @@ namespace backend.Migrations
 
                     b.Property<string>("ImageName")
                         .HasColumnType("TEXT");
+
+                    b.Property<bool>("IsHighlighted")
+                        .HasColumnType("INTEGER");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("TEXT");

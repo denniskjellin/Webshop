@@ -249,6 +249,9 @@ namespace backend.Migrations
                     b.Property<string>("ImageName")
                         .HasColumnType("TEXT");
 
+                    b.Property<bool>("IsHighlighted")
+                        .HasColumnType("INTEGER");
+
                     b.Property<decimal>("Price")
                         .HasColumnType("TEXT");
 
