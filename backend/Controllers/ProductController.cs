@@ -29,7 +29,7 @@ namespace backend.Controllers
             wwwRootPath = _hostEnvironment.WebRootPath;
         }
 
-
+        [Route("products")]
         // GET: Product
         public async Task<IActionResult> Index()
         {

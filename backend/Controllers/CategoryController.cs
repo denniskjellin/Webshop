@@ -22,6 +22,7 @@ namespace backend.Controllers
         }
 
         // GET: Category
+        [Route("categories")]
         public async Task<IActionResult> Index()
         {
               return _context.Categories != null ? 
