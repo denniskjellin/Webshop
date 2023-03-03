@@ -1,71 +1,64 @@
 @model IEnumerable<backend.Models.Product>
 
 @{
-    ViewData["Title"] = "Index";
+ViewData["Title"] = "Products";
 }
 
-<h1>Index</h1>
+<h1>@ViewData["Title"]</h1>
+<div class="d-flex justify-content-between">
+    <p>
+        <a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Create New</a>
+    </p>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsHighlighted)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageAlt)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Category)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsHighlighted)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageAlt)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category.Name)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+@* 
+Setting up a search bar, will try to get it to work later, styling implemented.
+*@
+    <form asp-action="Index" method="get">
+        <div class="input-group">
+            <input type="text" name="searchString" value="@ViewData["searchString"]" placeholder="Search" class="form-control" />
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-outline-secondary"><i class="bi bi-search"></i></button>
+            </div>
+        </div>
+    </form>
+</div>
+<hr />
+@* Creating a responsive table, so on smal screens you can swide to the side *@
+<div class="table-responsive">
+    @* Creating a table with "stripes" so each td get different color *@
+   <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Highlighted</th>
+                <th>Image</th>
+                <th>Category</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                    <td>@Html.DisplayFor(modelItem => item.IsHighlighted)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ImageName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Category.Name)</td>
+
+                    @* 
+                    Custom styling using bootstrap + icons
+                    *@
+                    <td>
+                        <a class="btn btn-secondary mt-0 mt-sm-1 mt-xs-2" asp-action="Details" asp-route-id="@item.ProductId"><i class="bi bi-info-circle icon-margin"></i>Details</a>
+                        <a class="btn btn-primary mt-0 mt-sm-1 mt-xs-2" asp-action="Edit" asp-route-id="@item.ProductId"><i class="bi bi-info-circle icon-margin"></i>Edit</a>
+                        <a class="btn btn-danger mt-0 mt-sm-1 mt-xs-2" asp-action="Delete" asp-route-id="@item.ProductId"><i class="bi bi-trash icon-margin"></i>Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
