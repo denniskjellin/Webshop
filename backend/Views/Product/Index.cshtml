@@ -50,12 +50,12 @@ Setting up a search bar, will try to get it to work later, styling implemented.
                     <td>@Html.DisplayFor(modelItem => item.Category.Name)</td>
 
                     @* 
-                    Custom styling using bootstrap + icons
+                    Custom styling using bootstrap + icons, setting margins for the icons/btn on different screens.
                     *@
                     <td>
-                        <a class="btn btn-secondary mt-0 mt-sm-1 mt-xs-2" asp-action="Details" asp-route-id="@item.ProductId"><i class="bi bi-info-circle icon-margin"></i>Details</a>
-                        <a class="btn btn-primary mt-0 mt-sm-1 mt-xs-2" asp-action="Edit" asp-route-id="@item.ProductId"><i class="bi bi-info-circle icon-margin"></i>Edit</a>
-                        <a class="btn btn-danger mt-0 mt-sm-1 mt-xs-2" asp-action="Delete" asp-route-id="@item.ProductId"><i class="bi bi-trash icon-margin"></i>Delete</a>
+                        <a class="btn btn-secondary mt-1 mt-md-1 mt-lg-0" asp-action="Details" asp-route-id="@item.ProductId"><i class="bi bi-info-circle icon-margin"></i>Details</a>
+                        <a class="btn btn-primary mt-1 mt-md-1 mt-lg-0" asp-action="Edit" asp-route-id="@item.ProductId"><i class="bi bi-info-circle icon-margin"></i>Edit</a>
+                        <a class="btn btn-danger mt-1 mt-md-1 mt-lg-0" asp-action="Delete" asp-route-id="@item.ProductId"><i class="bi bi-trash icon-margin"></i>Delete</a>
                     </td>
                 </tr>
             }
