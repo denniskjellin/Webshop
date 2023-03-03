@@ -8,10 +8,12 @@ using Microsoft.EntityFrameworkCore;
 using backend.Data;
 using backend.Models;
 using Microsoft.AspNetCore.Authorization;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Processing;
 
 namespace backend.Controllers
 {
-     [Authorize]
+    [Authorize]
     public class ProductController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -26,7 +28,7 @@ namespace backend.Controllers
             _hostEnvironment = hostEnvironment;
             wwwRootPath = _hostEnvironment.WebRootPath;
         }
-    
+
 
         // GET: Product
         public async Task<IActionResult> Index()
@@ -70,8 +72,9 @@ namespace backend.Controllers
         {
             if (ModelState.IsValid)
             {
-                    // Check if image is uploaded
-                 if(product.ImageFile != null) {
+                // Check if image is uploaded
+                if (product.ImageFile != null)
+                {
 
                     // Save image to wwwroot
                     string fileName = Path.GetFileNameWithoutExtension(product.ImageFile.FileName);
@@ -85,7 +88,9 @@ namespace backend.Controllers
                         await product.ImageFile.CopyToAsync(fileStream);
                     }
 
-                } else {
+                }
+                else
+                {
                     product.ImageName = "empty.jpg";
                 }
                 _context.Add(product);
@@ -182,14 +187,34 @@ namespace backend.Controllers
             {
                 _context.Products.Remove(product);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
+
+        private void CreateImageFiles(string filename)
+        {
+            // Path to images    
+            string imagePath = wwwRootPath + "/productimages/";
+
+            // Create image from uploaded file
+            using var image = Image.Load(imagePath + filename);
+            image.Mutate(x => x.Resize(200, 200));
+            image.Save(imagePath + "thumb_" + filename);
+
+            // Convert the original to webp
+            using var imageWebp = Image.Load(imagePath + filename);
+            // Create new filename
+            string webp_filename = filename.Substring(0, filename.LastIndexOf(".", StringComparison.Ordinal)) + ".webp";
+            image.SaveAsWebp(imagePath + webp_filename);
+
+        }
+
+
         private bool ProductExists(int id)
         {
-          return (_context.Products?.Any(e => e.ProductId == id)).GetValueOrDefault();
+            return (_context.Products?.Any(e => e.ProductId == id)).GetValueOrDefault();
         }
     }
 }

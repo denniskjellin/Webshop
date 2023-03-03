@@ -13,17 +13,20 @@ namespace backend.Models
         public string? Description { get; set; }
         [Required]
         public decimal Price { get; set; }
-[Required]
-[Display(Name = "Highlight")]
+        [Required]
+        [Display(Name = "Highlight")]
         public bool IsHighlighted { get; set; }
 
-        
+
         [Display(Name = "Image URL")]
         public string? ImageName { get; set; }
 
         [NotMapped]
         [Display(Name = "Image")]
         public IFormFile? ImageFile { get; set; }
+
+        [NotMapped]
+        public string ImageWebp { get; set; } = String.Empty;
 
         [Required]
         [Display(Name = "Alt Text")]
