@@ -88,6 +88,8 @@ namespace backend.Controllers
                         await product.ImageFile.CopyToAsync(fileStream);
                     }
 
+                    CreateImageFiles(fileName);
+
                 }
                 else
                 {
