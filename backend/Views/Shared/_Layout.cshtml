@@ -52,17 +52,23 @@
 <footer class="bg-dark border-top footer text-muted py-3">
     <div class="container d-flex justify-content-between align-items-center">
         <span>&copy; 2023 - Accio</span>
-        <div>
+        <div class="d-flex">
             @* if user is not signed in, they should not see products and categories *@
             @if (SignInManager.IsSignedIn(User)) {
-            <a class="text-white me-4" asp-area="" asp-controller="Product" asp-action="Index"><i class="bi bi-cart4"></i> Products</a>
-            <a class="text-white me-4" asp-area="" asp-controller="Category" asp-action="Index"><i class="bi bi-list"></i> Categories</a>
+                <a class="text-white me-2 me-md-4" asp-area="" asp-controller="Product" asp-action="Index"><i class="bi bi-cart4"></i> Products</a>
+                <a class="text-white me-2 me-md-4" asp-area="" asp-controller="Category" asp-action="Index"><i class="bi bi-list"></i> Categories</a>
+                <form class="text-white me-2 me-md-4" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                    <button  type="submit" class="btn text-white btn-underline"><span class="bi bi-box-arrow-right"></span> Logout</button>
+                </form>
             } else {
                 <a class="text-white me-4" asp-area="Identity" asp-page="/Account/Register"><i class="bi bi-person-plus"></i> Register</a>
+                <a class="text-white me-4" asp-area="Identity" asp-page="/Account/Login"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+
             }
         </div>
     </div>
 </footer>
+
 
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

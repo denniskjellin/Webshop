@@ -71,6 +71,19 @@ body {
   border-radius: 50%;
 }
 
+/* Remove underline fron navlinks in footer*/
+a.text-white {
+  text-decoration: none;
+}
+
+a.text-white:hover {
+  text-decoration: underline;
+}
+/* Add same styling to the logout button in the footer*/
+.btn-underline:hover {
+  text-decoration: underline;
+}
+
 
 
 
