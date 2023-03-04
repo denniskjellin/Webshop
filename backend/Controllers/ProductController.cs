@@ -214,6 +214,7 @@ namespace backend.Controllers
         }
 
         /* SEARCH */
+        [Route("search")]  /* By having this routename, the images got included in the search results */
         public async Task<IActionResult> Search(string searchString)
         {
             if (string.IsNullOrWhiteSpace(searchString)) /* If null, return all products */
