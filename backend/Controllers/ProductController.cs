@@ -213,6 +213,28 @@ namespace backend.Controllers
 
         }
 
+        /* SEARCH */
+        public async Task<IActionResult> Search(string searchString)
+        {
+            if (string.IsNullOrWhiteSpace(searchString)) /* If null, return all products */
+            {
+                return View("Index", await _context.Products.Include(p => p.Category).ToListAsync());
+            }
+
+            /* If not null, take searchString, look for matching letters and return view */
+            var products = await _context.Products.Include(p => p.Category)
+            /* accept lowercase/highcase letters and return if the searchword containts any letters that matches to a product */
+                .Where(p => p.Title.ToLower().Contains(searchString.ToLower()) || p.Category.Name.ToLower().Contains(searchString.ToLower()))
+                .ToListAsync();
+
+            /* If there is no matching products, return a messege to the user through the ViewBag property*/
+            if (products.Count == 0)
+            {
+                ViewBag.Message = "No products matching '" + searchString + "'" + " was found.";
+            }
+
+            return View("Index", products);
+        }
 
         private bool ProductExists(int id)
         {
