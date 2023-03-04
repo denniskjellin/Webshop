@@ -41,29 +41,39 @@
             @* Controll, if product count from the search is 0, Return a message through the ViewBag *@
             @if (!string.IsNullOrEmpty(ViewBag.Message))
             {
-                    <div class="alert alert-info">@ViewBag.Message</div>
+                            <div class="alert alert-info">@ViewBag.Message</div>
             } 
             @* Loop through each item *@  
             @foreach (var item in Model)
             {
-                        <tr>
-                            <td>@Html.DisplayFor(modelItem => item.Title)</td>
-                            <td>@Html.DisplayFor(modelItem => item.Description)</td>
-                            <td>@Html.DisplayFor(modelItem => item.Price)</td>
-                            <td>@Html.DisplayFor(modelItem => item.IsHighlighted)</td>
-                            <td>@Html.DisplayFor(modelItem => item.ImageName)</td>
-                            <td>@Html.DisplayFor(modelItem => item.Category.Name)</td>
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                <td>@Html.DisplayFor(modelItem => item.IsHighlighted)</td>
+                <td>
 
-                    @* 
-                    Custom styling using bootstrap + icons, setting margins for the icons/btn on different screens.
-                    *@
-                            <td>
-                                <a class="btn btn-secondary mt-1 mt-md-1 mt-lg-0" asp-action="Details" asp-route-id="@item.ProductId"><i class="bi bi-info-circle icon-margin"></i>Details</a>
-                                <a class="btn btn-primary mt-1 mt-md-1 mt-lg-0" asp-action="Edit" asp-route-id="@item.ProductId"><i class="bi bi-info-circle icon-margin"></i>Edit</a>
-                                <a class="btn btn-danger mt-1 mt-md-1 mt-lg-0" asp-action="Delete" asp-route-id="@item.ProductId"><i class="bi bi-trash icon-margin"></i>Delete</a>
-                            </td>
-                        </tr>
+                        @* Controll, if product has an image or if placeholder image should be displayed instead *@
+                        @if (item.ImageName != "empty.jpg")
+                        {
+                                <a href="productimages/@Html.DisplayFor(modelItem => item.ImageName)" target="_blank">
+                                    <img class="thumb" src="productimages/thumb_@Html.DisplayFor(modelItem => item.ImageName)" />
+                                </a>
+                        }
+                        else
+                        {
+                                <img class="thumb" src="~/productimages/empty.jpg" alt="No Image" />
+                        }
+                </td>
+                <td>@Html.DisplayFor(modelItem => item.Category.Name)</td>
+                <td>
+                    <a class="btn btn-secondary mt-1 mt-md-1 mt-lg-0" asp-action="Details" asp-route-id="@item.ProductId"><i class="bi bi-info-circle icon-margin"></i>Details</a>
+                    <a class="btn btn-primary mt-1 mt-md-1 mt-lg-0" asp-action="Edit" asp-route-id="@item.ProductId"><i class="bi bi-info-circle icon-margin"></i>Edit</a>
+                    <a class="btn btn-danger mt-1 mt-md-1 mt-lg-0" asp-action="Delete" asp-route-id="@item.ProductId"><i class="bi bi-trash icon-margin"></i>Delete</a>
+                </td>
+            </tr>
             }
+
         </tbody>
     </table>
 </div>

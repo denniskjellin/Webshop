@@ -21,15 +21,12 @@ body {
   margin-bottom: 60px;
 }
 
-/* card body styling */
-.card-body {
-  background-color: #f5f5f5;
-}
-
+/* Custom margin for icons */
 .icon-margin {
   margin-right: 3px;
 }
 
+/* Form components */
 .register-form {
   background-color: #258cfb;
 
@@ -39,15 +36,21 @@ body {
   background-color: #f5f5f5;
 }
 
+
+/* Nav components */
+.nav-item:hover {
+  background-color: #1e9e583a;
+  border-radius: 5px;
+}
+
 .btn-logout {
   border: solid rgb(0, 177, 59) 1px;
   background-color: #25fb853a;
 }
 
-.nav-item:hover {
-  background-color: #1e9e583a;
-  border-radius: 5px;
-  
+/* Custom cards */
+.card-body {
+  background-color: #f5f5f5;
 }
 
 .card-styled {
@@ -58,6 +61,14 @@ body {
   transform: scale(1.05);
   transition: all 0.3s ease-in-out;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Images */
+.thumb {
+  width: 60px;
+  height: 60px;
+  background-size: cover;
+  border-radius: 50%;
 }
 
 
