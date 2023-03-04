@@ -51,9 +51,7 @@ body {
 }
 
 .card-styled {
-  background-color: #f7f7f7;
-  border-radius: 10px;
-
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
 }
 
 .card-styled:hover {
