@@ -1,62 +1,67 @@
 @model backend.Models.Product
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit Product";
 }
 
-<h1>Edit</h1>
+@* 
+Creating card to display the data and the form.
+Using Bootstrap 5 for the card and the form elements with buttons + the library Bootstrap Icons.
+*@
 
-<h4>Product</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<h1>@ViewData["Title"]</h1>
+<div class="card mt-4">
+    <div class="card-body">
+        <h4 class="card-title">Product - @Html.DisplayFor(model => model.Title)</h4>
+        <hr />
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="ProductId" />
             <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
+                <label asp-for="Title" class="control-label">Title:</label>
                 <input asp-for="Title" class="form-control" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
+                <label asp-for="Description" class="control-label">Description:</label>
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Price" class="control-label"></label>
+                <label asp-for="Price" class="control-label">Price:</label>
                 <input asp-for="Price" class="form-control" />
                 <span asp-validation-for="Price" class="text-danger"></span>
             </div>
             <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsHighlighted" /> @Html.DisplayNameFor(model => model.IsHighlighted)
-                </label>
+                <input class="form-check-input" asp-for="IsHighlighted" />
+                <label class="form-check-label" for="IsHighlighted">Highlighted</label>
             </div>
             <div class="form-group">
-                <label asp-for="ImageName" class="control-label"></label>
+                <label asp-for="ImageName" class="control-label">Image:</label>
                 <input asp-for="ImageName" class="form-control" readonly />
                 <span asp-validation-for="ImageName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ImageAlt" class="control-label"></label>
+                <label asp-for="ImageAlt" class="control-label">Image Alt:</label>
                 <input asp-for="ImageAlt" class="form-control" />
                 <span asp-validation-for="ImageAlt" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CategoryId" class="control-label"></label>
+                <label asp-for="CategoryId" class="control-label">Category:</label>
                 <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
                 <span asp-validation-for="CategoryId" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+            <hr />
+            <div class="row">
+                <div class="col-sm-6">
+                    <button type="submit" class="btn btn-primary mt-1 mt-md-1 mt-lg-0"><i class="bi bi-save icon-margin"></i>Save Changes</button>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <a asp-action="Index" class="btn btn-secondary mt-1 mt-md-1 mt-lg-0"><i class="bi bi-arrow-left icon-margin"></i>Back to List</a>
+                </div>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
