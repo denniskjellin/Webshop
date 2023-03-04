@@ -50,6 +50,18 @@ body {
   
 }
 
+.card-styled {
+  background-color: #f7f7f7;
+  border-radius: 10px;
+
+}
+
+.card-styled:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
 
 
 

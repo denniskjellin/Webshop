@@ -2,7 +2,49 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="display-4 text-center mb-4">ACCIO</h1>
+                    <p class="lead text-center mb-5">Intranet for ACCIO Industries. Manage products and categories.</p>
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 mb-4">
+                            <div class="card-styled">
+                                <div class="card-body text-center">
+                                     <i class="bi bi-cart3 fa-3x mb-3"></i>
+                                    <h4 class="card-title mb-3">Products</h4>
+                                    <p class="card-text">Manage products.</p>
+                                    <a class="btn btn-primary" asp-area="" asp-controller="Products" asp-action="Index">Go to Products</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card-styled">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-layout-text-window-reverse fa-3x mb-3"></i>
+                                    <h4 class="card-title mb-3">Categories</h4>
+                                    <p class="card-text">Manage categories.</p>
+                                    <a class="btn btn-primary" asp-area="" asp-controller="Category" asp-action="Index">Go to Categories</a>
+                                </div>
+                            </div>
+                        </div>
+                         
+                        <div class="col-md-4 mb-4">
+                            <div class="card-styled">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-person-plus-fill fa-3x mb-3"></i>
+                                    <h4 class="card-title mb-3">Register</h4>
+                                    <p class="card-text">Join ACCIO!</p>
+                                    <a class="btn btn-primary" asp-area="Identity" asp-page="/Account/Register">Go to Register</a>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
