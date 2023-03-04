@@ -1,62 +1,56 @@
 @model backend.Models.Product
 
 @{
-    ViewData["Title"] = "Create";
+ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
-
-<h4>Product</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<h1>@ViewData["Title"]</h1>
+<div class="card mt-4">
+    <div class="card-body">
+        <h4 class="card-title">New Product</h4>
+        <hr />
         <form asp-action="Create" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
+                <label asp-for="Title" class="form-label">Title:</label>
                 <input asp-for="Title" class="form-control" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
+                <label asp-for="Description" class="form-label">Description:</label>
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Price" class="control-label"></label>
+                <label asp-for="Price" class="form-label">Price:</label>
                 <input asp-for="Price" class="form-control" />
                 <span asp-validation-for="Price" class="text-danger"></span>
             </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsHighlighted" /> @Html.DisplayNameFor(model => model.IsHighlighted)
-                </label>
+            <div class="form-group form-check mt-2 mb-2">
+                <input class="form-check-input" asp-for="IsHighlighted" />
+                <label class="form-check-label" for="IsHighlighted">Highlighted - Put Product in the spotlight.</label>
             </div>
             <div class="form-group">
-                <label asp-for="ImageFile" class="control-label">Product Image</label>
+                <label asp-for="ImageFile" class="form-label">Product Image:</label>
                 <input asp-for="ImageFile" class="form-control" />
                 <span asp-validation-for="ImageFile" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ImageAlt" class="control-label"></label>
+                <label asp-for="ImageAlt" class="form-label">Image Alt Text:</label>
                 <input asp-for="ImageAlt" accept="image/*" class="form-control" />
                 <span asp-validation-for="ImageAlt" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CategoryId" class="control-label"></label>
-                <select asp-for="CategoryId" class ="form-control" asp-items="ViewBag.CategoryId"></select>
+                <label asp-for="CategoryId" class="form-label">Asign to Category:</label>
+                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <button type="submit" class="btn btn-primary mt-3"><i class="bi bi-save icon-margin"></i>Create</button>
+                <a asp-action="Index" class="btn btn-secondary mt-3"><i class="bi bi-backspace icon-margin"></i>Back to List</a>
             </div>
         </form>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
