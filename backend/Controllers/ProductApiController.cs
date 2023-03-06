@@ -45,7 +45,6 @@ namespace backend.Controllers
         }
 
         // GET: api/ProductApi/5
-        [Route("api/product")]
         [HttpGet("{id}")]
         public async Task<ActionResult<Product>> GetProduct(int id)
         {

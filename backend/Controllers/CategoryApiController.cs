@@ -33,7 +33,6 @@ namespace backend.Controllers
         }
 
         // GET: api/CategoryApi/5
-        [Route("api/category")]
         [HttpGet("{id}")]
         public async Task<ActionResult<Category>> GetCategory(int id)
         {
