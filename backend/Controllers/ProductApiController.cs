@@ -10,7 +10,7 @@ using backend.Models;
 
 namespace backend.Controllers
 {
-    [Route("api/products")]
+    [Route("api/")]
     [ApiController]
     public class ProductApiController : ControllerBase
     {
@@ -23,6 +23,7 @@ namespace backend.Controllers
 
         // GET: api/ProductApi
         [HttpGet]
+        [Route("products")]
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
         {
           if (_context.Products == null)
@@ -46,6 +47,7 @@ namespace backend.Controllers
 
         // GET: api/ProductApi/5
         [HttpGet("{id}")]
+        [Route("product/{id}")]
         public async Task<ActionResult<Product>> GetProduct(int id)
         {
           if (_context.Products == null)

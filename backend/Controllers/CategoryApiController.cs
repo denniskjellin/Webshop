@@ -10,7 +10,7 @@ using backend.Models;
 
 namespace backend.Controllers
 {
-    [Route("api/categories")]
+    [Route("api/")]
     [ApiController]
     public class CategoryApiController : ControllerBase
     {
@@ -23,6 +23,7 @@ namespace backend.Controllers
 
         // GET: api/CategoryApi
         [HttpGet]
+        [Route("categories")]
         public async Task<ActionResult<IEnumerable<Category>>> GetCategories()
         {
           if (_context.Categories == null)
@@ -34,6 +35,7 @@ namespace backend.Controllers
 
         // GET: api/CategoryApi/5
         [HttpGet("{id}")]
+        [Route("category/{id}")]
         public async Task<ActionResult<Category>> GetCategory(int id)
         {
           if (_context.Categories == null)
