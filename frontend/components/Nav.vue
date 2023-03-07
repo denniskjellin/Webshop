@@ -85,7 +85,7 @@ p {
 }
 /* Highlight current page */
 .router-link-exact-active {
-  color: #12b488;
+  color: #1a8669;
   font-weight: bolder;
 }
 

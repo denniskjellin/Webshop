@@ -3,7 +3,7 @@
     <!-- Your hero image goes here -->
     <div class="info-text">
       <h1>ACCIO</h1>
-      <p>RESTOCKED - AMINO BLAST</p>
+      <h2>RESTOCKED - AMINO BLAST</h2>
     </div>
     <div class="button-container">
       <!--Navigation button-->
@@ -78,7 +78,7 @@
   font-size: 6rem;
 }
 
-.info-text p {
+.info-text h2 {
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -107,7 +107,7 @@ button:hover {
 
 /* XS-Small screens */
 @media (max-width: 500px) {
-  .info-text p {
+  .info-text h2 {
     display: none;
   }
 
@@ -131,7 +131,7 @@ button:hover {
   .info-text h1 {
     font-size: 3.8rem;
   }
-  .info-text p {
+  .info-text h2 {
     font-size: 1rem;
   }
 
