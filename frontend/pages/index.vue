@@ -1,4 +1,7 @@
 <template>
+    <section class="hero-image-container">
+    <!-- Your hero image goes here -->
+  </section>
   <section>
     <h1 class="text-center text-4xl mb-6">Home Page</h1>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -39,5 +42,27 @@
 <script setup></script>
 
 <style scoped>
+.hero-image-container {
+  width: 100%;
+  height: 35vh;
+  background-image: url('~/images/accio.jpg');
+  background-size: cover;
+  background-position: center;
+}
 
+/* Small screens */
+@media (max-width: 768px) {
+  .hero-image-container {
+    height: 300px;
+    background-position: 90% 75%; /* Shift the focal point down slightly */
+  }
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+  .hero-image-container {
+    height: 600px;
+    background-position: 50% 50%; /* Center the focal point */
+  }
+}
 </style>
