@@ -1,28 +1,12 @@
 <template>
-  <div class="flex flex-col h-screen">
+ <div class="flex flex-col h-screen">
     <header class="bg-white shadow-sm">
-      <nav class="container mx-auto p-4 flex justify-between">
+      <nav class="container mx-auto p-4 flex justify-between items-center">
         <NuxtLink to="/" class="text-xl font-bold">Accio</NuxtLink>
-        <div class="flex items-center">
-          <ul class="hidden md:flex gap-4">
-            <li class="mr-4">
-              <NuxtLink to="/" class="text-gray-700 hover:text-gray-900"
-                >Home</NuxtLink
-              >
-            </li>
-            <li class="mr-4">
-              <NuxtLink to="/about" class="text-gray-700 hover:text-gray-900"
-                >About</NuxtLink
-              >
-            </li>
-            <li class="mr-4">
-              <NuxtLink to="/products" class="text-gray-700 hover:text-gray-900"
-                >Products</NuxtLink
-              >
-            </li>
-          </ul>
+        <!--Hide on md screens + eventlistener on click-->
+        <div class="md:hidden">
           <button
-            class="md:hidden flex items-center focus:outline-none"
+            class="flex items-center focus:outline-none"
             @click="isOpen = !isOpen"
           >
             <svg
@@ -39,7 +23,25 @@
             </svg>
           </button>
         </div>
+        <ul class="hidden md:flex gap-4">
+          <li class="mr-4">
+            <NuxtLink to="/" class="text-gray-700 hover:text-gray-900"
+              >Home</NuxtLink
+            >
+          </li>
+          <li class="mr-4">
+            <NuxtLink to="/about" class="text-gray-700 hover:text-gray-900"
+              >About</NuxtLink
+            >
+          </li>
+          <li class="mr-4">
+            <NuxtLink to="/products" class="text-gray-700 hover:text-gray-900"
+              >Products</NuxtLink
+            >
+          </li>
+        </ul>
       </nav>
+      <!--hide on md screens-->
       <div
         class="md:hidden bg-white"
         :class="{ block: isOpen, hidden: !isOpen }"
@@ -117,10 +119,14 @@ export default {
 p {
   margin: 1.3rem 0;
 }
-
+/* Highlight current page */
 .router-link-exact-active {
-  color: #3490dc;
+  color: #12b488;
+  font-weight: bolder;
 }
+
+
+/* hamburger nav settings */
 .menu {
   transition: transform 0.3s ease-in-out;
 }
