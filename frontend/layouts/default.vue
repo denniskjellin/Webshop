@@ -1,12 +1,12 @@
 <template>
   <div class="flex flex-col h-screen">
-    <header class="bg-white shadow">
+    <header class="bg-white shadow-sm">
       <nav
-        class="container mx-auto px-4 py-2 flex items-center justify-between"
+        class="container mx-auto p-4 flex justify-between"
       >
         <NuxtLink to="/" class="text-xl font-bold">Accio</NuxtLink>
         <div class="flex items-center">
-          <ul class="hidden md:flex">
+          <ul class="hidden md:flex gap-4">
             <li class="mr-4">
               <NuxtLink to="/" class="text-gray-700 hover:text-gray-900"
                 >Home</NuxtLink
@@ -46,7 +46,7 @@
         class="md:hidden bg-white"
         :class="{ block: isOpen, hidden: !isOpen }"
       >
-        <ul class="px-2 py-3">
+        <ul class="px-4 py-3">
           <li class="mb-2">
             <NuxtLink to="/" class="text-gray-700 hover:text-gray-900"
               >Home</NuxtLink
@@ -57,7 +57,7 @@
               >About</NuxtLink
             >
           </li>
-          <li class="mb-2">
+          <li class="mb-0">
             <NuxtLink to="/products" class="text-gray-700 hover:text-gray-900"
               >Products</NuxtLink
             >
@@ -66,9 +66,8 @@
       </div>
     </header>
     <main class="container mx-auto flex-grow px-4 py-8">
-      <div>
+      <!--Output the page content-->
         <slot></slot>
-      </div>
     </main>
     <footer class="bg-gray-800 text-white py-4">
       <div class="container mx-auto px-4">
