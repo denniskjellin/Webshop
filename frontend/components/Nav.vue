@@ -1,7 +1,9 @@
 <template>
   <header class="bg-white shadow-sm">
     <nav class="container mx-auto p-4 flex justify-between items-center">
-      <NuxtLink to="/" class="text-xl font-bold">Accio</NuxtLink>
+      <NuxtLink to="/" class="flex items-center">
+    <img src="/images/logo.png" alt="Accio logo" class="logo">
+  </NuxtLink>
       <!--Hide on md screens + eventlistener on click-->
       <div class="md:hidden">
         <button
@@ -74,6 +76,10 @@ export default {
 </script>
 
 <style scoped>
+
+.logo {
+  height: 50px;
+}
 p {
   margin: 1.3rem 0;
 }
