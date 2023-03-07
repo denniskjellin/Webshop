@@ -33,7 +33,5 @@
 <script setup></script>
 
 <style scoped>
-p {
-  margin: 1.3rem 0;
-}
+
 </style>

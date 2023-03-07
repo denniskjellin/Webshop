@@ -89,6 +89,10 @@ export default {
 
 <style scoped>
 
+p {
+  margin: 1.3rem 0;
+}
+
 .router-link-exact-active {
   color: #3490dc;
 }

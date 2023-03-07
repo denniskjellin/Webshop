@@ -1,26 +1,110 @@
 <template>
-  <div>
-    <header>
-      <nav>
-        <NuxtLink to="/">Accio</NuxtLink>
+  <div class="flex flex-col h-screen">
+    <header class="bg-white shadow-sm">
+      <nav
+        class="container mx-auto p-4 flex justify-between"
+      >
+        <NuxtLink to="/" class="text-xl font-bold">Accio</NuxtLink>
+        <div class="flex items-center">
+          <ul class="hidden md:flex gap-4">
+            <li class="mr-4">
+              <NuxtLink to="/" class="text-gray-700 hover:text-gray-900"
+                >Home</NuxtLink
+              >
+            </li>
+            <li class="mr-4">
+              <NuxtLink to="/about" class="text-gray-700 hover:text-gray-900"
+                >About</NuxtLink
+              >
+            </li>
+            <li class="mr-4">
+              <NuxtLink to="/products" class="text-gray-700 hover:text-gray-900"
+                >Products</NuxtLink
+              >
+            </li>
+          </ul>
+          <button
+            class="md:hidden flex items-center focus:outline-none"
+            @click="isOpen = !isOpen"
+          >
+            <svg
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="menu w-6 h-6"
+              :class="{ open: isOpen }"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 12h14a1 1 0 1 1 0 2H3a1 1 0 1 1 0-2zm0-5h14a1 1 0 1 1 0 2H3a1 1 0 1 1 0-2zm0-5h14a1 1 0 1 1 0 2H3a1 1 0 1 1 0-2z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
       </nav>
+      <div
+        class="md:hidden bg-white"
+        :class="{ block: isOpen, hidden: !isOpen }"
+      >
+        <ul class="px-4 py-3">
+          <li class="mb-2">
+            <NuxtLink to="/" class="text-gray-700 hover:text-gray-900"
+              >Home</NuxtLink
+            >
+          </li>
+          <li class="mb-2">
+            <NuxtLink to="/about" class="text-gray-700 hover:text-gray-900"
+              >About</NuxtLink
+            >
+          </li>
+          <li class="mb-0">
+            <NuxtLink to="/products" class="text-gray-700 hover:text-gray-900"
+              >Products</NuxtLink
+            >
+          </li>
+        </ul>
+      </div>
     </header>
-    <!--output page content -->
-    <div>
-      <slot />
-    </div>
-    <footer>
-      <ul>
-        <li><NuxtLink to="/">Home</NuxtLink></li>
-        <li><NuxtLink to="/about">About</NuxtLink></li>
-        <li><NuxtLink to="/products">Products</NuxtLink></li>
-      </ul>
+    <main class="container mx-auto flex-grow px-4 py-8">
+      <!--Output the page content-->
+        <slot></slot>
+    </main>
+    <footer class="bg-gray-800 text-white py-4">
+      <div class="container mx-auto px-4">
+        <p class="text-center p-5">&copy; 2023 Accio. All rights reserved.</p>
+      </div>
     </footer>
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      isOpen: false,
+    };
+  },
+};
+</script>
+
 <style scoped>
+
+
+
 .router-link-exact-active {
-  color: #12b488;
+  color: #3490dc;
+}
+.menu {
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu.open {
+  transform: rotate(90deg);
+}
+
+@media (min-width: 768px) {
+  .menu {
+    display: none;
+  }
 }
 </style>
