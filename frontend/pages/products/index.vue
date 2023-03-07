@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Products Index</h1>
+        <h1>Products Index Slot</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quibusdam porro reprehenderit corrupti sed sapiente blanditiis iusto sunt, nihil labore.</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quibusdam porro reprehenderit corrupti sed sapiente blanditiis iusto sunt, nihil labore.</p>
     </div>
