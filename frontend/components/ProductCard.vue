@@ -1,5 +1,5 @@
 <template>
-  <div class="card text-center pb-8">
+  <section class="card text-center pb-8">
     <img :src="product.imageName" :alt="product.imageAlt" class="thumb" />
     <p class="font-bold text-gray-700 mt-4 truncate uppercase tracking-widest">
       {{ product.title }}
@@ -11,7 +11,7 @@
     <NuxtLink :to="`/products/${product.id}`">
       <span class="btn-card">View Product</span>
     </NuxtLink>
-  </div>
+  </section>
 </template>
 
 <script setup>

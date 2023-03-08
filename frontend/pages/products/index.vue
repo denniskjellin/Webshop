@@ -38,10 +38,6 @@ const { data: products } = await useFetch(
   "https://acciodennis.azurewebsites.net/api/products"
 );
 
-// import layout
-definePageMeta({
-  layout: "default",
-});
 </script>
 
 <style scoped></style>
