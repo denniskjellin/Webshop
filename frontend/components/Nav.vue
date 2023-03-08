@@ -31,15 +31,16 @@
           >
         </li>
         <li class="mr-4">
-          <NuxtLink to="/about" class="text-gray-700 hover:text-green-700 hover:underline"
-            >About</NuxtLink
-          >
-        </li>
-        <li class="mr-4">
           <NuxtLink to="/products" class="text-gray-700 hover:text-green-700 hover:underline"
             >Products</NuxtLink
           >
         </li>
+        <li class="mr-4">
+          <NuxtLink to="/about" class="text-gray-700 hover:text-green-700 hover:underline"
+            >About</NuxtLink
+          >
+        </li>
+    
       </ul>
       
       
