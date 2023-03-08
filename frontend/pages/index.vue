@@ -64,7 +64,7 @@ const { data: products } = await useFetch(
 .hero-image-container {
   width: 100%;
   height: 35vh;
-  background-image: url("~/images/accio.jpg");
+  background-image: url("/images/accio.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -116,7 +116,7 @@ const { data: products } = await useFetch(
 
 /* Second hero-img */
 .hero-image {
-  background-image: url("~/images/enviroment_burn_500.jpg");
+  background-image: url("/images/enviroment_burn_500.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
