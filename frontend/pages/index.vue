@@ -17,10 +17,10 @@
 
     <!---product cards -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-    <div v-for="p in products" :key="p.id">
-      <ProductCard :product="p" v-if="p.isHighlighted" />
+      <div v-for="p in products" :key="p.id">
+        <ProductCard :product="p" v-if="p.isHighlighted" />
+      </div>
     </div>
-  </div>
 
     <!---info section -->
     <div class="bg-gray-200 p-4 mt-10">
@@ -32,13 +32,14 @@
         officiis quo, dicta
       </p>
     </div>
-    
   </section>
 </template>
 
 <script setup>
 // fetch the products
-const { data: products} = await useFetch('https://acciodennis.azurewebsites.net/api/products')
+const { data: products } = await useFetch(
+  "https://acciodennis.azurewebsites.net/api/products"
+);
 </script>
 
 <style scoped>
@@ -87,11 +88,13 @@ const { data: products} = await useFetch('https://acciodennis.azurewebsites.net/
   cursor: pointer;
   border-radius: 25px;
   font-weight: bold;
+  transition: background-color 0.5s ease;
 }
 
 .btn-viewp:hover {
-  background-color: #5f5f5f;
+  background-color:#0e5c35;
   color: #fff;
+  transition: background-color 0.5s ease;
 }
 
 /* XS-Small screens */
@@ -118,9 +121,8 @@ const { data: products} = await useFetch('https://acciodennis.azurewebsites.net/
   }
 
   .info-text h1 {
-
-  letter-spacing: 1px;
-}
+    letter-spacing: 1px;
+  }
 }
 
 /* Smaler screens */
