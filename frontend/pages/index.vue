@@ -2,13 +2,13 @@
   <div class="hero-image-container mb-8">
     <!-- Your hero image goes here -->
     <div class="info-text">
-      <h1>ACCIO</h1>
-      <h2>RESTOCKED - AMINO BLAST</h2>
+      <h1>LATEST NEW!</h1>
+      <h2>WE GOT THE ENERGY YOU NEED</h2>
     </div>
     <div class="button-container">
       <!--Navigation button-->
       <NuxtLink to="/products">
-        <button>View Product</button>
+        <button class="btn-viewp">View Product</button>
       </NuxtLink>
     </div>
   </div>
@@ -75,32 +75,33 @@
 }
 
 .info-text h1 {
-  font-size: 6rem;
+  font-size: 2.8rem;
+  letter-spacing: 2.5px;
 }
 
 .info-text h2 {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
 }
 
 .button-container {
   position: absolute;
-  bottom: 2rem;
+  bottom: 6rem;
   left: 25%;
   transform: translateX(-50%);
 }
 
-button {
-  background-color: #333;
+.btn-viewp {
+  background-color: #333333;
   color: #fff;
-  padding: 1rem 2rem;
-  border: none;
+  padding: 0.5rem 1rem;
   border-radius: 0.5rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
   cursor: pointer;
+  border-radius: 25px;
 }
 
-button:hover {
+.btn-viewp:hover {
   background-color: #5f5f5f;
   color: #fff;
 }
@@ -112,16 +113,24 @@ button:hover {
   }
 
   .info-text {
-    top: 0%;
+    font-weight: bolder;
     left: 50%;
+    top: 0;
   }
-  /* Hide in mobile, became to messy with it*/
+
   .button-container {
-    display: none;
+    position: absolute;
+    top: 80%;
+    margin-left: 6.2rem;
+    transform: translate(-50%, -50%);
+  }
+
+  .btn-viewp {
+    border: solid rgb(180, 180, 180) 2px;
   }
 }
 
-/* Small screens */
+/* Smaler screens */
 @media (max-width: 820px) {
   .hero-image-container {
     height: 300px;
@@ -129,16 +138,20 @@ button:hover {
   }
 
   .info-text h1 {
-    font-size: 3.8rem;
+    font-size: 1.4rem;
   }
   .info-text h2 {
     font-size: 1rem;
   }
 
-  button {
+  .btn-viewp {
     font-size: 1rem;
   }
-  
+
+  .button-container {
+    bottom: 4rem;
+    left: 25%;
+  }
 }
 
 /* Large screens */
@@ -147,7 +160,11 @@ button:hover {
     height: 600px;
     background-position: 50% 50%; /* Center the focal point */
   }
-
-
+  .button-container {
+    position: absolute;
+    bottom: 12rem;
+    left: 25%;
+    transform: translateX(-50%);
+  }
 }
 </style>
