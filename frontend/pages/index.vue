@@ -17,7 +17,7 @@
 
     <!---product cards -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      <div v-for="p in products" :key="p.id" class="w-full md:w-auto">
+      <div v-for="p in products" class="w-full md:w-auto">
         <ProductCard :product="p" v-if="p.isHighlighted" />
       </div>
     </div>
