@@ -23,6 +23,7 @@
     </div>
 
     <!---info section -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
     <div class="p-4 mt-10">
       <h2 class="text-2xl font-bold mb-2 mt-2">Info</h2>
       <p>
@@ -32,6 +33,18 @@
         officiis quo, dicta
       </p>
     </div>
+    <div class="p-4 mt-10">
+      <h2 class="text-2xl font-bold mb-2 mt-2">Info</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam fuga
+        blanditiis sed cumque in exercitationem placeat modi numquam nobis vitae
+        ex, quis facilis deleniti minima autem eaque aliquam est beatae? Nostrum
+        officiis quo, dicta
+      </p>
+    </div>
+    
+  </div>
+    
   </section>
 </template>
 
