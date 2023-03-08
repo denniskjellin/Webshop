@@ -12,11 +12,11 @@
           class="sr-only peer"
         />
         <!-- eventListener for "toggleForm" (re used from old project)-->
-        <div
+        <span
           @click="toggleNav()"
           id="toggle-btn"
           class="md:hidden w-11 h-6 mb-4 bg-gray-600 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-green-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"
-        ></div>
+        ></span>
         <span
           class="md:hidden ml-3 mb-4 text-md font-bold text-gray-700 peer-checked:text-gray-500"
         >{{ showNav ? 'Hide Categories' : 'Show Categories' }}</span> <!-- if else check-->
