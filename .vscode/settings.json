@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/bb68c4dc-6da9-402c-9205-4d8bab62f1bf/resourceGroups/Accio/providers/Microsoft.Web/sites/acciodennis",
+    "appService.deploySubpath": "backend"
+}
