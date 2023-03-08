@@ -14,33 +14,15 @@
   </div>
   <section>
     <h2 class="text-center text-4xl mb-6">Home Page (spotlight)</h2>
+
+    <!---product cards -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div class="bg-gray-200 p-4">
-        <h2 class="text-2xl font-bold mb-2">Product 1</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non
-          eros eget dui ultricies mattis. Donec euismod sem at dui ullamcorper
-          interdum.
-        </p>
-      </div>
-      <div class="bg-gray-200 p-2">
-        <h2 class="text-2xl font-bold mb-2 mt-2">Product 2</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non
-          eros eget dui ultricies mattis. Donec euismod sem at dui ullamcorper
-          interdum.
-        </p>
-      </div>
-      <div class="bg-gray-200 p-2">
-        <h2 class="text-2xl font-bold mb-2 mt-2">Product 3</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non
-          eros eget dui ultricies mattis. Donec euismod sem at dui ullamcorper
-          interdum.
-        </p>
-      </div>
-      
+    <div v-for="p in products" :key="p.id">
+      <ProductCard :product="p" v-if="p.isHighlighted" />
     </div>
+  </div>
+
+    <!---info section -->
     <div class="bg-gray-200 p-4 mt-10">
       <h2 class="text-2xl font-bold mb-2 mt-2">Info</h2>
       <p>
