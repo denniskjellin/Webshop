@@ -16,8 +16,8 @@
     <h2 class="text-center text-4xl mb-6">Home Page (spotlight)</h2>
 
     <!---product cards -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div v-for="p in products" :key="p.id">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div v-for="p in products" :key="p.id" class="w-full md:w-auto">
         <ProductCard :product="p" v-if="p.isHighlighted" />
       </div>
     </div>
@@ -92,7 +92,7 @@ const { data: products } = await useFetch(
 }
 
 .btn-viewp:hover {
-  background-color:#0e5c35;
+  background-color: #0e5c35;
   color: #fff;
   transition: background-color 0.5s ease;
 }
