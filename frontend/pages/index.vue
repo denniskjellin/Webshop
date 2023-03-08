@@ -21,7 +21,7 @@
         <ProductCard :product="p" v-if="p.isHighlighted" />
       </div>
     </div>
-
+    <!---info section -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <section class="p-4">
         <h2 class="text-2xl font-bold mb-2 mt-2">Info</h2>
@@ -38,7 +38,7 @@
           Nostrum officiis quo, dicta
         </p>
       </section>
-
+      <!--- secondary hero-img -->
       <div class="hero-image mt-10">
         <div class="hero-text">
           <p class="text-white uppercase font-bold">all the essentials</p>
@@ -122,7 +122,6 @@ const { data: products } = await useFetch(
   background-size: cover;
   position: relative;
   height: 500px;
-
 }
 
 .hero-text {
@@ -134,8 +133,6 @@ const { data: products } = await useFetch(
   font-size: 2rem;
   width: 100%;
 }
-
-
 
 /* XS-Small screens */
 @media (max-width: 500px) {
@@ -155,8 +152,6 @@ const { data: products } = await useFetch(
     margin-left: 6.2rem;
     transform: translate(-50%, -50%);
   }
-
-
 
   .info-text h1 {
     letter-spacing: 1px;
