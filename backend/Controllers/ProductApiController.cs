@@ -47,7 +47,7 @@ namespace backend.Controllers
 
         // GET: api/ProductApi/5
         [HttpGet("{id}")]
-        [Route("product/{id}")]
+        [Route("products/{id}")]
         public async Task<ActionResult<Product>> GetProduct(int id)
         {
           if (_context.Products == null)
