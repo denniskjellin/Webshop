@@ -42,6 +42,15 @@
 <style scoped>
 p {
   margin: 1.3rem 0;
+  color: whitesmoke;
+}
+
+a {
+  color:rgb(184, 184, 184)
+}
+
+h3 {
+  color: whitesmoke;
 }
 /* Highlight current page */
 .router-link-exact-active {

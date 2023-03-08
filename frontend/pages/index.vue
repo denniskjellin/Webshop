@@ -13,7 +13,7 @@
     </div>
   </div>
   <section>
-    <h2 class="text-center text-4xl mb-6">Home Page (spotlight)</h2>
+    <h2 class="text-center text-4xl mb-6 uppercase">trending</h2>
 
     <!---product cards -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -23,7 +23,7 @@
     </div>
 
     <!---info section -->
-    <div class="bg-gray-200 p-4 mt-10">
+    <div class="p-4 mt-10">
       <h2 class="text-2xl font-bold mb-2 mt-2">Info</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam fuga
@@ -53,13 +53,13 @@ const { data: products } = await useFetch(
   text-align: center;
 }
 
+
 .info-text {
   position: absolute;
   top: 50%;
   left: 25%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: #000000;
 }
 
 .info-text h1 {
