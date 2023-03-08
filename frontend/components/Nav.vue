@@ -26,21 +26,23 @@
       </div>
       <ul class="hidden md:flex gap-4">
         <li class="mr-4">
-          <NuxtLink to="/" class="text-gray-700 hover:text-gray-900"
+          <NuxtLink to="/" class="text-gray-700 hover:text-green-700 hover:underline"
             >Home</NuxtLink
           >
         </li>
         <li class="mr-4">
-          <NuxtLink to="/about" class="text-gray-700 hover:text-gray-900"
+          <NuxtLink to="/about" class="text-gray-700 hover:text-green-700 hover:underline"
             >About</NuxtLink
           >
         </li>
         <li class="mr-4">
-          <NuxtLink to="/products" class="text-gray-700 hover:text-gray-900"
+          <NuxtLink to="/products" class="text-gray-700 hover:text-green-700 hover:underline"
             >Products</NuxtLink
           >
         </li>
       </ul>
+      
+      
     </nav>
     <!--hide on md screens-->
     <div class="md:hidden bg-white" :class="{ block: isOpen, hidden: !isOpen }">
