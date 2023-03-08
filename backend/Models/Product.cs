@@ -11,7 +11,7 @@ namespace backend.Models
 
         [Required]
         [StringLength(100, MinimumLength = 2)]
-        [RegularExpression(@"^[^!?\s]+$", ErrorMessage = "Title cannot contain ! or ?")] // settings for allowing certain signs
+        [RegularExpression(@"^[^\s!?\t]+$", ErrorMessage = "Title cannot contain ! or ?")]
         public string? Title { get; set; }
 
         [Required]
