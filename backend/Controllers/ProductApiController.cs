@@ -61,6 +61,10 @@ namespace backend.Controllers
                 return NotFound();
             }
 
+            //Add url path
+            var wwwroot = $"{Request.Scheme}://{Request.Host.Value}";
+            product.ImageName = wwwroot + "/productimages/" + product.ImageName;
+
             return product;
         }
 
@@ -100,10 +104,10 @@ namespace backend.Controllers
         [HttpPost]
         public async Task<ActionResult<Product>> PostProduct(Product product)
         {
-          if (_context.Products == null)
-          {
-              return Problem("Entity set 'ApplicationDbContext.Products'  is null.");
-          }
+            if (_context.Products == null)
+            {
+                return Problem("Entity set 'ApplicationDbContext.Products'  is null.");
+            }
             _context.Products.Add(product);
             await _context.SaveChangesAsync();
 
