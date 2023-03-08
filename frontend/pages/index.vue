@@ -2,7 +2,7 @@
   <div class="hero-image-container mb-8">
     <!-- Your hero image goes here -->
     <div class="info-text">
-      <h1>LATEST NEW!</h1>
+      <h1>LATEST NEWS!</h1>
       <h2>WE GOT THE ENERGY YOU NEED</h2>
     </div>
     <div class="button-container">
@@ -86,6 +86,7 @@ const { data: products} = await useFetch('https://acciodennis.azurewebsites.net/
   font-size: 1rem;
   cursor: pointer;
   border-radius: 25px;
+  font-weight: bold;
 }
 
 .btn-viewp:hover {
@@ -115,6 +116,11 @@ const { data: products} = await useFetch('https://acciodennis.azurewebsites.net/
   .btn-viewp {
     border: solid rgb(180, 180, 180) 2px;
   }
+
+  .info-text h1 {
+
+  letter-spacing: 1px;
+}
 }
 
 /* Smaler screens */
