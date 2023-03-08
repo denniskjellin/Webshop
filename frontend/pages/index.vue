@@ -8,7 +8,7 @@
     <div class="button-container">
       <!--Navigation button-->
       <NuxtLink to="/products">
-        <button class="btn-viewp">View Product</button>
+        <span class="btn-viewp">View Product</span>
       </NuxtLink>
     </div>
   </section>
@@ -44,7 +44,7 @@
           <p class="text-white uppercase font-bold">all the essentials</p>
           <h2 class="text-2xl font-bold mb-2 mt-2">
             <NuxtLink to="/products">
-              <button class="btn-viewp">Explore Products</button>
+              <span class="btn-viewp">Explore Products</span>
             </NuxtLink>
           </h2>
         </div>
@@ -99,7 +99,7 @@ const { data: products } = await useFetch(
 .btn-viewp {
   background-color: #1a8669;
   color: #fff;
-  padding: 0.5rem 1rem;
+  padding: 0.8rem 1rem;
   border-radius: 0.5rem;
   font-size: 1rem;
   cursor: pointer;
