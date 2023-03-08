@@ -1,5 +1,5 @@
 <template>
-  <div class="hero-image-container mb-8">
+  <section class="hero-image-container mb-8">
     <!-- Your hero image goes here -->
     <div class="info-text">
       <h1>LATEST NEWS!</h1>
@@ -11,7 +11,7 @@
         <button class="btn-viewp">View Product</button>
       </NuxtLink>
     </div>
-  </div>
+  </section>
   <section>
     <h2 class="text-center text-4xl mb-6 uppercase">trending</h2>
 
@@ -22,29 +22,34 @@
       </div>
     </div>
 
-    <!---info section -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-    <div class="p-4 mt-10">
-      <h2 class="text-2xl font-bold mb-2 mt-2">Info</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam fuga
-        blanditiis sed cumque in exercitationem placeat modi numquam nobis vitae
-        ex, quis facilis deleniti minima autem eaque aliquam est beatae? Nostrum
-        officiis quo, dicta
-      </p>
+      <section class="p-4">
+        <h2 class="text-2xl font-bold mb-2 mt-2">Info</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam fuga
+          blanditiis sed cumque in exercitationem placeat modi numquam nobis
+          vitae ex, quis facilis deleniti minima autem eaque aliquam est beatae?
+          Nostrum officiis quo, dicta
+        </p>
+        <p class="mt-2">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam fuga
+          blanditiis sed cumque in exercitationem placeat modi numquam nobis
+          vitae ex, quis facilis deleniti minima autem eaque aliquam est beatae?
+          Nostrum officiis quo, dicta
+        </p>
+      </section>
+
+      <div class="hero-image mt-10">
+        <div class="hero-text">
+          <p class="text-white uppercase font-bold">all the essentials</p>
+          <h2 class="text-2xl font-bold mb-2 mt-2">
+            <NuxtLink to="/products">
+              <button class="btn-viewp">Explore Products</button>
+            </NuxtLink>
+          </h2>
+        </div>
+      </div>
     </div>
-    <div class="p-4 mt-10">
-      <h2 class="text-2xl font-bold mb-2 mt-2">Info</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam fuga
-        blanditiis sed cumque in exercitationem placeat modi numquam nobis vitae
-        ex, quis facilis deleniti minima autem eaque aliquam est beatae? Nostrum
-        officiis quo, dicta
-      </p>
-    </div>
-    
-  </div>
-    
   </section>
 </template>
 
@@ -65,7 +70,6 @@ const { data: products } = await useFetch(
   position: relative;
   text-align: center;
 }
-
 
 .info-text {
   position: absolute;
@@ -93,7 +97,7 @@ const { data: products } = await useFetch(
 }
 
 .btn-viewp {
-  background-color: #333333;
+  background-color: #1a8669;
   color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
@@ -109,6 +113,29 @@ const { data: products } = await useFetch(
   color: #fff;
   transition: background-color 0.5s ease;
 }
+
+/* Second hero-img */
+.hero-image {
+  background-image: url("~/images/enviroment_burn_500.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 500px;
+
+}
+
+.hero-text {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 2rem;
+  width: 100%;
+}
+
+
 
 /* XS-Small screens */
 @media (max-width: 500px) {
@@ -129,9 +156,7 @@ const { data: products } = await useFetch(
     transform: translate(-50%, -50%);
   }
 
-  .btn-viewp {
-    border: solid rgb(180, 180, 180) 2px;
-  }
+
 
   .info-text h1 {
     letter-spacing: 1px;
