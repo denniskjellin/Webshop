@@ -39,6 +39,7 @@
           interdum.
         </p>
       </div>
+      
     </div>
     <div class="bg-gray-200 p-4 mt-10">
       <h2 class="text-2xl font-bold mb-2 mt-2">Info</h2>
@@ -49,10 +50,14 @@
         officiis quo, dicta
       </p>
     </div>
+    
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+// fetch the products
+const { data: products} = await useFetch('https://acciodennis.azurewebsites.net/api/products')
+</script>
 
 <style scoped>
 .hero-image-container {
