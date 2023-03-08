@@ -122,6 +122,7 @@ const { data: products } = await useFetch(
   background-size: cover;
   position: relative;
   height: 500px;
+  border-radius: 10px;
 }
 
 .hero-text {
