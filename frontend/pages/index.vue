@@ -7,7 +7,7 @@
     </div>
     <div class="button-container">
       <!--Navigation button-->
-      <NuxtLink to="/products">
+      <NuxtLink to="/products/amino">
         <span class="btn-viewp">View Product</span>
       </NuxtLink>
     </div>
