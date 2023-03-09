@@ -1,9 +1,9 @@
 <template>
   <section class="card text-center pb-8">
     <img :src="product.imageName" :alt="product.imageAlt" class="thumb" />
-    <p class="font-bold text-gray-700 mt-4 truncate uppercase tracking-widest">
+    <h2 class="font-bold text-gray-700 mt-4 truncate uppercase tracking-widest">
       {{ product.title }}
-    </p>
+    </h2>
 
     <p class="text-green-700 text-xl font-bold mb-5 mt-1 truncate">
       ${{ product.price }}

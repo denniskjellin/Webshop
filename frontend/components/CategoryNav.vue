@@ -1,6 +1,7 @@
 <template>
   <nav class="category-nav">
     <section>
+      <h2 class="hidden">Hidden validation header</h2>
       <label
         for="default-toggle"
         class="inline-flex relative items-center cursor-pointer"
@@ -21,7 +22,7 @@
           class="md:hidden ml-3 mb-4 text-md font-bold text-gray-700 peer-checked:text-gray-500"
         >{{ showNav ? 'Hide Categories' : 'Show Categories' }}</span> <!-- if else check-->
       </label>
-    </section>
+    
     <div v-show="showNav" class="md:flex items-center border-x-4 border-green-500 mb-10 bg-gray-100">
       <div class="flex flex-col items-center justify-center">
         <NuxtLink
@@ -57,6 +58,7 @@
         </NuxtLink>
       </div>
     </div>
+  </section>
   </nav>
 </template>
 
