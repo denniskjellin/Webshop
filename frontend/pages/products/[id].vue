@@ -8,9 +8,11 @@
 </template>
 
 <script setup>
+// route id
 const {id} = useRoute().params
+// url and tag on id
 const uri = `https://acciodennis.azurewebsites.net/api/products/${id}`
-
+// fetch data
 const { data: product } = await useFetch(uri, { key: id  })
 </script>
 
