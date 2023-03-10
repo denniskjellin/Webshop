@@ -16,6 +16,7 @@
 <script setup>
 // defineProps is a helper function that allows us to define props
 const { product } = defineProps(["product"]);
+
 </script>
 
 <style lang="scss" scoped>
