@@ -21,7 +21,7 @@ const { product } = defineProps(["product"]);
 <style lang="scss" scoped>
 .thumb {
   max-height: 300px; // maybe change this later
-  max-width: 70%;
+  max-width: 100%;
   margin-top: 1rem;
   border-radius: 5px;
 }
