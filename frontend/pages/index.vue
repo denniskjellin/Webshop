@@ -1,5 +1,5 @@
 <template>
-  <section class="hero-image-container mb-8">
+  <section class="hero-image-container mb-16">
     <!-- Your hero image goes here -->
     <div class="info-text">
       <h1>LATEST NEWS!</h1>
@@ -13,23 +13,23 @@
     </div>
   </section>
   <section>
-    <h2 class="text-center text-3xl mb-6 uppercase">trending</h2>
+    <h2 class="text-start text-2xl">Trending</h2>
 
     <!---product cards -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 border-b border-gray-200">
       <div v-for="p in products" class="w-full md:w-auto">
         <ProductCard :product="p" v-if="p.isHighlighted" />
       </div>
     </div>
     <div>
-      <h2 class="text-3xl mt-10 mb-1 uppercase">shop categories</h2>
+      <h2 class="text-2xl mt-10 mb-1">Shop categories</h2>
       <CategoryNav></CategoryNav>
     </div>
 
     <!---info section -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <section class="p-4">
-        <h2 class="text-3xl mb-2 mt-2 uppercase">info</h2>
+        <h2 class="text-2xl mb-2 mt-2">Info</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam fuga
           blanditiis sed cumque in exercitationem placeat modi numquam nobis

@@ -2,7 +2,7 @@
   <section>
     <!-- Category nav -->
     <CategoryNav />
-    <h1 class="text-center text-3xl mb-6 uppercase">Products</h1>
+    <h1 class="text-start text-gray-700 text-2xl mb-6">Products</h1>
 
     <!---product cards -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">

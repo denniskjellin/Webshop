@@ -1,15 +1,12 @@
 <template>
   <NuxtLink :to="`/products/${product.productId}`">
-  <section class="card text-center pb-8">
+  <section class="pb-5">
     <img :src="product.imageName" :alt="product.imageAlt" class="thumb" />
-    <h2 class="font-bold text-gray-700 mt-4 truncate uppercase tracking-widest">
-      {{ product.id }}
-    </h2>
-
-    <p class="text-green-700 text-xl font-bold mb-5 mt-1 truncate">{{ product.price }}:-</p>
+    <p class="text-gray-600 text-md font-bold mb-0 mt-1 truncate tracking-wide">{{ product.title }}</p>
+    <p class="text-gray-600 text-md font-bold mb-0 mt-1 truncate tracking-wide">{{ product.price }}:-</p>
     <!-- Link to product with id -->
     
-      <span class="btn-card">View Product</span>
+      <!-- <span class="btn-card">View Product</span> -->
     
   </section>
 </NuxtLink>
@@ -25,7 +22,6 @@ const { product } = defineProps(["product"]);
 .thumb {
   max-height: 300px; // maybe change this later
   max-width: 70%;
-  margin: 0 auto;
   margin-top: 1rem;
   border-radius: 5px;
 }

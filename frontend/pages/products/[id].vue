@@ -6,10 +6,10 @@
     </div>
     <!--Product info -->
     <div>
-      <h1 class="text-3xl font-bold mb-5 uppercase">{{ product.title }}</h1>
+      <h1 class="text-2xl font-bold mb-5 uppercase">{{ product.title }}</h1>
       <span class="bg-green-700 text-center text-white font-bold ava">In stock</span>
-      <p class="text-gray-600 text-lg mb-5 mt-3">{{ product.description }}</p>
-      <p class="text-gray-600 text-lg mb-10">
+      <p class="text-gray-700 text-lg mb-5 mt-3">{{ product.description }}</p>
+      <p class="text-gray-700 text-lg mb-10">
         The product will be a addition support for your daily source of
         nutrition and will further your recovery and progress from your workout.
         With its unique components we can asure you that you will be delighted
@@ -49,7 +49,12 @@ const { id } = useRoute().params;
 const uri = `https://acciodennis.azurewebsites.net/api/products/${id}`;
 // fetch data
 const { data: product } = await useFetch(uri, { key: id });
-// maximum quantity allowed for purchase
+// error msg if product cant be found
+if (!product.value) {
+  throw createError({statusCode: 404, statusMessage: 'Product not found'})
+}
+
+// maximum quantity allowed for purchase2
 const maxQuantity = 50;
 // quantity selected by user
 let quantity = 1;
