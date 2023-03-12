@@ -13,16 +13,21 @@
     </div>
   </section>
   <section>
-    <h2 class="text-start text-2xl text-gray-700 uppercase font-bold">Trending</h2>
+    <h2 class="text-start text-2xl text-gray-700 uppercase font-bold">
+      Trending
+    </h2>
 
     <!---product cards -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 border-b border-gray-200">
-      <div v-for="p in products" class="w-full md:w-auto">
-        <ProductCard :product="p" v-if="p.isHighlighted === true" />
+      <div v-for="p in products.filter((product) => product.isHighlighted)">
+        <ProductCard :product="p" />
       </div>
     </div>
+
     <div>
-      <h2 class="text-2xl mt-10 mb-1 text-gray-700 font-bold uppercase">Shop categories</h2>
+      <h2 class="text-2xl mt-10 mb-1 text-gray-700 font-bold uppercase">
+        Shop categories
+      </h2>
       <CategoryNav></CategoryNav>
     </div>
 

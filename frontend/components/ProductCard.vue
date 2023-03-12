@@ -5,9 +5,6 @@
     <img :src="product.imageName" :alt="product.imageAlt" class="thumb" />
     <p class="text-gray-600 text-md font-bold mb-0 mt-1 truncate tracking-wide">{{ product.title }}</p>
     <p class="text-gray-600 text-md font-bold mb-0 mt-1 truncate tracking-wide">{{ product.price }}:-</p>
-    <!-- Link to product with id -->
-
-      <!-- <span class="btn-card">View Product</span> -->
   </section>
 </NuxtLink>
 </template>
