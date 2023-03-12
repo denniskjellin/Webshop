@@ -29,7 +29,7 @@
           to="/products/amino"
           class="text-xl text-gray-700 p-4 hover:text-gray-500"
         >
-          <span class="text-2xl mb-2 font-bold">Amino</span><br />
+          <span class="text-1xl mb-2 font-bold">Amino</span><br />
           <span class="text-base"
             >Boost your workout with our high quality Amino supplements.</span
           >
@@ -40,7 +40,7 @@
           to="/products/preeworkout"
           class="text-xl text-gray-700 p-4 hover:text-gray-500"
         >
-          <span class="text-2xl mb-2 font-bold">Preworkout</span><br />
+          <span class="text-1xl mb-2 font-bold">Preworkout</span><br />
           <span class="text-base"
             >Get ready to crush your workout with our Preworkout formulas.</span
           >
@@ -51,7 +51,7 @@
           to="/products/protein"
           class="text-xl text-gray-700 p-4 hover:text-gray-500"
         >
-          <span class="text-2xl mb-2 font-bold">Protein</span><br />
+          <span class="text-1xl mb-2 font-bold">Protein</span><br />
           <span class="text-base"
             >Fuel your muscles with our high-quality Protein powders.</span
           >

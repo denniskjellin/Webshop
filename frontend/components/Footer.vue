@@ -1,7 +1,7 @@
 <template>
   <!--- Footer styling with different section of contents -->
   <div class="footer-container">
-    <footer class="bg-gray-800 text-white py-4">
+    <footer class="bg-black text-white py-4">
       <div class="container mx-auto flex justify-between px-4">
         <div class="flex-1 mr-4">
           <h3 class="text-lg mb-2">Home</h3>

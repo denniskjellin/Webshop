@@ -13,7 +13,7 @@
     </div>
   </section>
   <section>
-    <h2 class="text-start text-2xl">Trending</h2>
+    <h2 class="text-start text-2xl text-gray-700">Trending</h2>
 
     <!---product cards -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 border-b border-gray-200">
@@ -28,27 +28,32 @@
 
     <!---info section -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <section class="p-4">
-        <h2 class="text-2xl mb-2 mt-2">Info</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam fuga
-          blanditiis sed cumque in exercitationem placeat modi numquam nobis
-          vitae ex, quis facilis deleniti minima autem eaque aliquam est beatae?
-          Nostrum officiis quo, dicta
-        </p>
-      </section>
+      <NuxtLink to="/products">
+      <div class="hero-image-2 mt-10">
+        <div class="hero-text">
+          <p class="text-white uppercase font-bold">NEW - ISOLATE</p>
+        </div>
+      </div>
+    </NuxtLink>
       <!--- secondary hero-img -->
       <div class="hero-image mt-10">
+        <NuxtLink to="/products">
         <div class="hero-text">
           <p class="text-white uppercase font-bold">all the essentials</p>
           <h2 class="text-2xl font-bold mb-2 mt-2">
-            <NuxtLink to="/products">
               <span class="btn-viewp">Explore Products</span>
-            </NuxtLink>
           </h2>
         </div>
+      </NuxtLink>
       </div>
     </div>
+  </section>
+  <section>
+    <h3 class="text-2xl mt-10 mb-1 text-gray-700">Info</h3>
+    <p class="text-gray-700 text-lg mb-3">
+       This is a fictional webshop created by Dennis Kjellin for a school project. The products are not real and the prices are not real. The purpose of this webshop is to show the skills I have learned during my education. To read more visit the about section of this website.
+      </p>
+
   </section>
 </template>
 
@@ -116,6 +121,16 @@ const { data: products } = await useFetch(
 /* Second hero-img */
 .hero-image {
   background-image: url("/images/enviroment_burn_500.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 500px;
+  border-radius: 5px;
+}
+
+.hero-image-2 {
+  background-image: url("/images/iso.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
