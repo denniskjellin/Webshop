@@ -68,6 +68,16 @@ const { data: products } = await useFetch(
   "https://acciodennis.azurewebsites.net/api/products"
 );
 
+// set the title and meta tags
+useHead({
+  title: "Accio Nutrition workout supplements",
+  meta: [
+    {
+      name: "description", content: "Accio webshop home for the highest quality workout supplements",
+    },
+  ],
+})
+
 </script>
 
 <style scoped>
