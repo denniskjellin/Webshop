@@ -13,7 +13,7 @@
     </div>
   </section>
   <section>
-    <h2 class="text-start text-2xl text-gray-700">Trending</h2>
+    <h2 class="text-start text-2xl text-gray-700 uppercase font-bold">Trending</h2>
 
     <!---product cards -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 border-b border-gray-200">
@@ -22,7 +22,7 @@
       </div>
     </div>
     <div>
-      <h2 class="text-2xl mt-10 mb-1">Shop categories</h2>
+      <h2 class="text-2xl mt-10 mb-1 text-gray-700 font-bold uppercase">Shop categories</h2>
       <CategoryNav></CategoryNav>
     </div>
 
@@ -52,7 +52,7 @@
     </div>
   </section>
   <section>
-    <h3 class="text-2xl mt-10 mb-1 text-gray-700">Info</h3>
+    <h3 class="text-2xl mt-10 mb-1 text-gray-700 font-bold uppercase">Info</h3>
     <p class="text-gray-700 text-lg mb-3">
       This is a fictional webshop created by Dennis Kjellin for a school
       project. The products are not real and the prices are not real. The

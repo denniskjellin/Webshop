@@ -2,7 +2,14 @@
   <section>
     <!-- Category nav -->
     <CategoryNav />
-    <h1 class="text-center text-4xl mb-6 uppercase">Amino Acids</h1>
+    <h1 class="text-2xl font-bold uppercase tracking-wider text-gray-700">
+      Amino Acids
+    </h1>
+    <p class="text-gray-700 mb-3">
+      Amino acids are the most important supplement for your muscle growth, and
+      a really good Amino product contains everything you need to take your
+      training to the absolute highest level.
+    </p>
     <!---product cards -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
       <div
@@ -14,25 +21,6 @@
         <ProductCard :product="p" />
       </div>
     </div>
-
-    <!---info section -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <section class="p-4">
-        <h2 class="text-2xl font-bold mb-2 mt-2">Info</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam fuga
-          blanditiis sed cumque in exercitationem placeat modi numquam nobis
-          vitae ex, quis facilis deleniti minima autem eaque aliquam est beatae?
-          Nostrum officiis quo, dicta
-        </p>
-        <p class="mt-2">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam fuga
-          blanditiis sed cumque in exercitationem placeat modi numquam nobis
-          vitae ex, quis facilis deleniti minima autem eaque aliquam est beatae?
-          Nostrum officiis quo, dicta
-        </p>
-      </section>
-    </div>
   </section>
 </template>
 
@@ -43,13 +31,4 @@ const { data: products } = await useFetch(
 );
 </script>
 
-<style scoped>
-h2 {
-  margin-bottom: 1.3rem;
-  font-size: 2.2rem;
-}
-
-p {
-  margin: 1.3rem 0;
-}
-</style>
+<style scoped></style>
