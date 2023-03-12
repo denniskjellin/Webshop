@@ -1,4 +1,10 @@
 <template>
+  <div>
+    <Head>
+      <Title>{{ product.title }}</Title>
+      <Meta name="description" :content="product.description" />
+    </Head>
+  </div>
   <section
     class="grid grid-cols-1 md:grid-cols-2 gap-4 border-b border-gray-300 pb-5"
   >
@@ -41,6 +47,7 @@
       </p>
     </div>
   </section>
+  
 </template>
 
 <script setup>
@@ -67,17 +74,7 @@ const maxQuantity = 50;
 // quantity selected by user
 let quantity = 1;
 
-// set the title and meta tags
-useHead({
-  // get the name of the product from the api
-  title: "Accio | " + product.value.title,
-  meta: [
-    {
-      name: "description",
-      content: "Accio - Product",
-    },
-  ],
-});
+
 </script>
 
 <style lang="scss" scoped>

@@ -29,36 +29,36 @@
     <!---info section -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <NuxtLink to="/products/protein">
-      <div class="hero-image-2 mt-10">
-        <div class="hero-text">
-          <p class="text-white uppercase font-bold">new isolate</p>
-          <h2 class="text-2xl font-bold mb-2 mt-2">
+        <div class="hero-image-2 mt-10">
+          <div class="hero-text">
+            <p class="text-white uppercase font-bold">new isolate</p>
+            <h2 class="text-2xl font-bold mb-2 mt-2">
               <span class="btn-viewp">Shop now</span>
-          </h2>
-          
-
-        </div>
-      </div>
-    </NuxtLink>
-      <!--- secondary hero-img -->
-      <div class="hero-image mt-10">
-        <NuxtLink to="/products">
-        <div class="hero-text">
-          <p class="text-white uppercase font-bold">all the essentials</p>
-          <h2 class="text-2xl font-bold mb-2 mt-2">
-              <span class="btn-viewp">Explore products</span>
-          </h2>
+            </h2>
+          </div>
         </div>
       </NuxtLink>
-      </div>
+      <!--- secondary hero-img -->
+      <NuxtLink to="/products">
+        <div class="hero-image mt-10">
+          <div class="hero-text">
+            <p class="text-white uppercase font-bold">all the essentials</p>
+            <h2 class="text-2xl font-bold mb-2 mt-2">
+              <span class="btn-viewp">Explore products</span>
+            </h2>
+          </div>
+        </div>
+      </NuxtLink>
     </div>
   </section>
   <section>
     <h3 class="text-2xl mt-10 mb-1 text-gray-700">Info</h3>
     <p class="text-gray-700 text-lg mb-3">
-       This is a fictional webshop created by Dennis Kjellin for a school project. The products are not real and the prices are not real. The purpose of this webshop is to show the skills I have learned during my education. To read more visit the about section of this website.
-      </p>
-
+      This is a fictional webshop created by Dennis Kjellin for a school
+      project. The products are not real and the prices are not real. The
+      purpose of this webshop is to show the skills I have learned during my
+      education. To read more visit the about section of this website.
+    </p>
   </section>
 </template>
 
@@ -73,11 +73,11 @@ useHead({
   title: "Accio Nutrition workout supplements",
   meta: [
     {
-      name: "description", content: "Accio webshop home for the highest quality workout supplements",
+      name: "description",
+      content: "Accio webshop home for the highest quality workout supplements",
     },
   ],
-})
-
+});
 </script>
 
 <style scoped>
@@ -115,8 +115,6 @@ useHead({
   left: 25%;
   transform: translateX(-50%);
 }
-
-
 
 /* Second hero-img */
 .hero-image {

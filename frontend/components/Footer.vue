@@ -2,29 +2,34 @@
   <!--- Footer styling with different section of contents -->
   <div class="footer-container">
     <footer class="bg-black text-white py-4">
-      <div class="container mx-auto flex justify-between px-4">
-        <div class="flex-1 mr-4">
-          <h3 class="text-lg mb-2">Home</h3>
+      <div class="container mx-auto flex justify-between px-2">
+        <div class="hidden md:block flex-1 mr-4">
+          <h3 class="text-lg mb-2">ACCIO</h3>
           <NuxtLink to="/" class="block mb-2"
-            ><i class="fas fa-home mr-2"></i>Link 1</NuxtLink
+            ><i class="fas fa-home mr-2"></i>Home</NuxtLink
           >
         </div>
         <div class="flex-1 mr-4">
           <h3 class="text-lg mb-2">About</h3>
-          <a href="#" class="block mb-2"
-            ><i class="fas fa-info-circle mr-2"></i>Link 1</a
+          <NuxtLink to="/about" class="block mb-2"
+            ><i class="fas fa-info-circle mr-2"></i>About</NuxtLink
           >
         </div>
         <div class="flex-1 mr-4">
           <h3 class="text-lg mb-2">Products</h3>
-          <a href="#" class="block mb-2"
-            ><i class="fas fa-shopping-cart mr-2"></i>Link 1</a
-          >
+          <NuxtLink to="/products"  class="block mb-2"
+            ><i class="fas fa-shopping-cart mr-2"></i>See all</NuxtLink>
         </div>
         <div class="flex-1">
           <h3 class="text-lg mb-2">Categories</h3>
-          <a href="#" class="block mb-2"
-            ><i class="fas fa-tags mr-2"></i>Link 1</a
+          <NuxtLink to="/products/amino" class="block mb-2"
+            ><i class="fas fa-tags mr-2"></i>Amino</NuxtLink
+          >
+          <NuxtLink to="/products/preeworkout" class="block mb-2"
+            ><i class="fas fa-tags mr-2"></i>Preeworkout</NuxtLink
+          >
+          <NuxtLink to="/products/protein" class="block mb-2"
+            ><i class="fas fa-tags mr-2"></i>Protein</NuxtLink
           >
         </div>
       </div>
