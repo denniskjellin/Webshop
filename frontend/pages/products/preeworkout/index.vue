@@ -7,7 +7,15 @@
 </template>
 
 <script setup>
-
+// set the title and meta tags
+useHead({
+  title: "Accio | Preeworkout",
+  meta: [
+    {
+      name: "description", content: "Accio - Preeworkout",
+    },
+  ],
+})
 </script>
 
 <style scoped>

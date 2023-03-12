@@ -1,5 +1,7 @@
 <template>
-  <section class="grid grid-cols-1 md:grid-cols-2 gap-4 border-b border-gray-300 pb-5">
+  <section
+    class="grid grid-cols-1 md:grid-cols-2 gap-4 border-b border-gray-300 pb-5"
+  >
     <div>
       <!--img container-->
       <img class="w-full" :src="product.imageName" :alt="product.imageAlt" />
@@ -7,7 +9,9 @@
     <!--Product info -->
     <div>
       <h1 class="text-2xl font-bold mb-5 uppercase">{{ product.title }}</h1>
-      <span class="bg-green-700 text-center text-white font-bold avaible">In stock</span>
+      <span class="bg-green-700 text-center text-white font-bold avaible"
+        >In stock</span
+      >
       <p class="text-gray-700 text-lg mb-5 mt-3">{{ product.description }}</p>
       <p class="text-gray-700 text-lg mb-10">
         The product will be a addition support for your daily source of
@@ -26,9 +30,8 @@
         </div>
 
         <button class="text-white w-1/4 h-10 font-bold sm:hidden md:block">
-  <i class="fas fa-shopping-cart"></i> Add to cart
-</button>
-
+          <i class="fas fa-shopping-cart"></i> Add to cart
+        </button>
       </div>
       <p class="text-sm text-gray-500">
         This is a supplement and should not be used as an alternative to a
@@ -52,13 +55,29 @@ const uri = `https://acciodennis.azurewebsites.net/api/products/${id}`;
 const { data: product } = await useFetch(uri, { key: id });
 // error msg if product cant be found
 if (!product.value) {
-  throw createError({statusCode: 404, statusMessage: 'Product not found', fatal: true})
+  throw createError({
+    statusCode: 404,
+    statusMessage: "Product not found",
+    fatal: true,
+  });
 }
 
 // maximum quantity allowed for purchase2
 const maxQuantity = 50;
 // quantity selected by user
 let quantity = 1;
+
+// set the title and meta tags
+useHead({
+  // get the name of the product from the api
+  title: "Accio | " + product.value.title,
+  meta: [
+    {
+      name: "description",
+      content: "Accio - Product",
+    },
+  ],
+});
 </script>
 
 <style lang="scss" scoped>
@@ -79,6 +98,6 @@ button {
 }
 .avaible {
   border-radius: 25px;
-  padding: 0.3rem .5rem;
+  padding: 0.3rem 0.5rem;
 }
 </style>

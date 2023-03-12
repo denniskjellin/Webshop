@@ -67,6 +67,7 @@
 const { data: products } = await useFetch(
   "https://acciodennis.azurewebsites.net/api/products"
 );
+
 </script>
 
 <style scoped>

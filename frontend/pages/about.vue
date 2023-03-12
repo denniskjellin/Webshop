@@ -13,6 +13,16 @@
 
 <script setup>
 
+// set the title and meta tags
+useHead({
+  title: "Accio | About",
+  meta: [
+    {
+      name: "description", content: "Accio - About",
+    },
+  ],
+})
+
 </script>
 
 <style scoped>

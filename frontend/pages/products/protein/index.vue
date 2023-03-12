@@ -7,7 +7,15 @@
 </template>
 
 <script setup>
-
+// set the title and meta tags
+useHead({
+  title: "Accio | Protein",
+  meta: [
+    {
+      name: "description", content: "Accio - Protein",
+    },
+  ],
+})
 </script>
 
 <style scoped>
