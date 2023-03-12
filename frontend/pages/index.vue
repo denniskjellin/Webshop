@@ -28,10 +28,15 @@
 
     <!---info section -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <NuxtLink to="/products">
+      <NuxtLink to="/products/protein">
       <div class="hero-image-2 mt-10">
         <div class="hero-text">
-          <p class="text-white uppercase font-bold">NEW - ISOLATE</p>
+          <p class="text-white uppercase font-bold">new isolate</p>
+          <h2 class="text-2xl font-bold mb-2 mt-2">
+              <span class="btn-viewp">Shop now</span>
+          </h2>
+          
+
         </div>
       </div>
     </NuxtLink>
@@ -41,7 +46,7 @@
         <div class="hero-text">
           <p class="text-white uppercase font-bold">all the essentials</p>
           <h2 class="text-2xl font-bold mb-2 mt-2">
-              <span class="btn-viewp">Explore Products</span>
+              <span class="btn-viewp">Explore products</span>
           </h2>
         </div>
       </NuxtLink>
