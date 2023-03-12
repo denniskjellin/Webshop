@@ -1,6 +1,7 @@
 <template>
   <NuxtLink :to="`/products/${product.productId}`">
   <section class="pb-5">
+    <h2 class="hidden">validation</h2>
     <img :src="product.imageName" :alt="product.imageAlt" class="thumb" />
     <p class="text-gray-600 text-md font-bold mb-0 mt-1 truncate tracking-wide">{{ product.title }}</p>
     <p class="text-gray-600 text-md font-bold mb-0 mt-1 truncate tracking-wide">{{ product.price }}:-</p>
