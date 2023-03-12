@@ -25,9 +25,10 @@
           </select>
         </div>
 
-        <button class="text-white w-full h-10 font-bold sm:hidden md:block">
-          Add to cart
-        </button>
+        <button class="text-white w-1/4 h-10 font-bold sm:hidden md:block">
+  <i class="fas fa-shopping-cart"></i> Add to cart
+</button>
+
       </div>
       <p class="text-sm text-gray-500">
         This is a supplement and should not be used as an alternative to a

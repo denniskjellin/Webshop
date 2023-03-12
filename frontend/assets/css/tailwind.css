@@ -4,6 +4,8 @@
 
 body {
     @apply bg-gray-50;
+    font-family: 'Poppins', sans-serif;
+
 }
 
 /* max-width for paragrafs according to web usbaility */
@@ -12,7 +14,8 @@ p {
     color: #2e2e2e;
   }
 
-  h1,h2,h3 {
+  h1,h2,h3,h4,h5,h6 {
+    font-family: 'Montserrat', sans-serif;
     color: #2e2e2e;
   }
   /* btn */
