@@ -3,7 +3,7 @@
     <!-- Category nav -->
     <CategoryNav />
     <h1 class="text-2xl font-bold uppercase tracking-wider text-gray-700">
-      Amino Acids
+      Amino
     </h1>
     <p class="text-gray-700 mb-3">
       Amino acids are the most important supplement for your muscle growth, and
@@ -29,6 +29,15 @@
 const { data: products } = await useFetch(
   "https://acciodennis.azurewebsites.net/api/products"
 );
+
+useHead({
+  title: "Accio | Amino",
+  meta: [
+    {
+      name: "description", content: "Accio - Amino supplements",
+    },
+  ],
+})
 </script>
 
 <style scoped></style>
