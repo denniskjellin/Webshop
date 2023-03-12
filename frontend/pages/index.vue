@@ -105,23 +105,7 @@ const { data: products } = await useFetch(
   transform: translateX(-50%);
 }
 
-.btn-viewp {
-  background-color: #1a8669;
-  color: #fff;
-  padding: 0.8rem 1rem;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 25px;
-  font-weight: bold;
-  transition: background-color 0.5s ease;
-}
 
-.btn-viewp:hover {
-  background-color: #0e5c35;
-  color: #fff;
-  transition: background-color 0.5s ease;
-}
 
 /* Second hero-img */
 .hero-image {
