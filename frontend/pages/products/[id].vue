@@ -7,7 +7,7 @@
     <!--Product info -->
     <div>
       <h1 class="text-2xl font-bold mb-5 uppercase">{{ product.title }}</h1>
-      <span class="bg-green-700 text-center text-white font-bold ava">In stock</span>
+      <span class="bg-green-700 text-center text-white font-bold avaible">In stock</span>
       <p class="text-gray-700 text-lg mb-5 mt-3">{{ product.description }}</p>
       <p class="text-gray-700 text-lg mb-10">
         The product will be a addition support for your daily source of
@@ -51,7 +51,7 @@ const uri = `https://acciodennis.azurewebsites.net/api/products/${id}`;
 const { data: product } = await useFetch(uri, { key: id });
 // error msg if product cant be found
 if (!product.value) {
-  throw createError({statusCode: 404, statusMessage: 'Product not found'})
+  throw createError({statusCode: 404, statusMessage: 'Product not found', fatal: true})
 }
 
 // maximum quantity allowed for purchase2
@@ -76,7 +76,7 @@ button {
   background-color: #1a8669;
   border-radius: 25px;
 }
-.ava {
+.avaible {
   border-radius: 25px;
   padding: 0.3rem .5rem;
 }
