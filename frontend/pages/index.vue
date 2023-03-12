@@ -2,8 +2,8 @@
   <section class="hero-image-container mb-16">
     <!-- Your hero image goes here -->
     <div class="info-text">
-      <h1>LATEST NEWS!</h1>
-      <h2>WE GOT THE ENERGY YOU NEED</h2>
+      <h1 class="uppercase">latest news</h1>
+      <h2 class="uppercase">we got the amino you need.</h2>
     </div>
     <div class="button-container">
       <!--Navigation button-->
@@ -17,7 +17,7 @@
       Trending
     </h2>
 
-    <!---product cards -->
+    <!---product cards, filter and show highlighted products -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 border-b border-gray-200">
       <div v-for="p in products.filter((product) => product.isHighlighted)">
         <ProductCard :product="p" />
