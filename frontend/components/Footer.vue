@@ -51,7 +51,7 @@ p {
 }
 
 a {
-  color:rgb(184, 184, 184);
+  color: whitesmoke;
   font-size: .9rem;
 }
 

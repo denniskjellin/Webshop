@@ -26,20 +26,25 @@
       </div>
       <ul class="hidden md:flex gap-4">
         <li class="mr-4">
-          <NuxtLink to="/" class="text-gray-700 hover:text-green-700 hover:underline"
+          <NuxtLink to="/" class="text-gray-700 text-lg font-bold tracking-wider hover:text-green-700 hover:underline"
             >Home</NuxtLink
           >
         </li>
         <li class="mr-4">
-          <NuxtLink to="/products" class="text-gray-700 hover:text-green-700 hover:underline"
+          <NuxtLink to="/products" class="text-gray-700 text-lg font-bold tracking-wider hover:text-green-700 hover:underline"
             >Products</NuxtLink
           >
         </li>
         <li class="mr-4">
-          <NuxtLink to="/about" class="text-gray-700 hover:text-green-700 hover:underline"
+          <NuxtLink to="/about" class="text-gray-700 text-lg font-bold tracking-wider hover:text-green-700 hover:underline"
             >About</NuxtLink
           >
         </li>
+     <!--    <li class="mr-4">
+          <NuxtLink to="/basket" class="text-gray-700 text-lg font-bold tracking-wider hover:text-green-700 hover:underline"
+            >Basket</NuxtLink
+          >
+        </li> -->
     
       </ul>
       
@@ -49,17 +54,17 @@
     <div class="md:hidden bg-white" :class="{ block: isOpen, hidden: !isOpen }">
       <ul class="px-4 py-3">
         <li class="mb-2">
-          <NuxtLink to="/" class="text-gray-700 hover:text-gray-900"
+          <NuxtLink to="/" class="text-gray-700 text-lg font-bold tracking-wider hover:text-green-700 hover:underline"
             >Home</NuxtLink
           >
         </li>
         <li class="mb-2">
-          <NuxtLink to="/about" class="text-gray-700 hover:text-gray-900"
+          <NuxtLink to="/about" class="text-gray-700 text-lg font-bold tracking-wider hover:text-green-700 hover:underline"
             >About</NuxtLink
           >
         </li>
         <li class="mb-0">
-          <NuxtLink to="/products" class="text-gray-700 hover:text-gray-900"
+          <NuxtLink to="/products" class="text-gray-700 text-lg font-bold tracking-wider hover:text-green-700 hover:underline"
             >Products</NuxtLink
           >
         </li>
