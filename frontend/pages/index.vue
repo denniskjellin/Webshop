@@ -4,28 +4,38 @@
       <!-- Your hero image goes here -->
       <div class="info-text">
         <h2 class="text-4xl uppercase font-bold tracking-wider">latest news</h2>
-        <h2 class="text-1xl font-bold uppercase tracking-wider">we got the amino you need.</h2>
+        <h2 class="text-1xl font-bold uppercase tracking-wider">
+          we got the amino you need.
+        </h2>
       </div>
       <div class="button-container">
         <!--Navigation button-->
-        <span class="btn-view hidden md:block">View Product</span>
+        <span class="btn-view">Shop now</span>
       </div>
     </section>
   </NuxtLink>
   <section>
-    <h1 class="text-start text-2xl text-gray-700 uppercase font-bold tracking-wide">
+    <h1
+      class="text-start text-2xl text-gray-700 uppercase font-bold tracking-wide"
+    >
       Trending
     </h1>
 
-    <!---product cards, filter and show highlighted products -->
+    <!---product cards, filter and show highlighted products in alpabetical order -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-3 border-b border-gray-200">
-      <div v-for="p in products.filter((product) => product.isHighlighted)">
+      <div
+        v-for="p in products
+          .filter((product) => product.isHighlighted)
+          .sort((a, b) => a.title.localeCompare(b.title))"
+      >
         <ProductCard :product="p" />
       </div>
     </div>
 
     <div>
-      <h2 class="text-2xl mt-10 mb-1 text-gray-700 font-bold uppercase tracking-wide">
+      <h2
+        class="text-2xl mt-10 mb-1 text-gray-700 font-bold uppercase tracking-wide"
+      >
         Shop categories
       </h2>
       <CategoryNav></CategoryNav>
@@ -36,7 +46,9 @@
       <NuxtLink to="/products/protein">
         <div class="hero-image-2 mt-10">
           <div class="hero-text">
-            <p class="text-white uppercase font-bold tracking-wide">new isolate</p>
+            <p class="text-white uppercase font-bold tracking-wide">
+              new isolate
+            </p>
             <h2 class="text-2xl font-bold mb-2 mt-2">
               <span class="btn-viewp">Shop now</span>
             </h2>
@@ -47,7 +59,9 @@
       <NuxtLink to="/products">
         <div class="hero-image mt-10">
           <div class="hero-text">
-            <p class="text-white uppercase font-bold tracking-wide">all the essentials</p>
+            <p class="text-white uppercase font-bold tracking-wide">
+              all the essentials
+            </p>
             <h2 class="text-2xl font-bold mb-2 mt-2">
               <span class="btn-viewp">Explore products</span>
             </h2>
@@ -57,7 +71,11 @@
     </div>
   </section>
   <section>
-    <h3 class="text-2xl mt-10 mb-1 text-gray-700 font-bold uppercase tracking-wide">Info</h3>
+    <h3
+      class="text-2xl mt-10 mb-1 text-gray-700 font-bold uppercase tracking-wide"
+    >
+      Info
+    </h3>
     <p class="text-gray-700 text-lg mb-3">
       This is a fictional webshop created by Dennis Kjellin for a school
       project. The products are not real and the prices are not real. The
@@ -109,8 +127,6 @@ useHead({
   letter-spacing: 2.5px;
 }
 
-
-
 .button-container {
   position: absolute;
   bottom: 6rem;
@@ -150,30 +166,28 @@ useHead({
 }
 
 .btn-view {
-    background-color: #131313;
-    color: #fff;
-    padding: 0.8rem 1rem;
-    border-radius: 0.5rem;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 25px;
-    font-weight: bold;
-    transition: background-color 0.5s ease;
-  }
+  background-color: #131313;
+  color: #fff;
+  padding: 0.8rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background-color 0.5s ease;
+}
 
-  .btn-view:hover {
-    background-color: #383838;
-    color: #fff;
-    transition: background-color 0.5s ease;
-  }
+.btn-view:hover {
+  background-color: #383838;
+  color: #fff;
+  transition: background-color 0.5s ease;
+}
 
 /* XS-Small screens */
 @media (max-width: 500px) {
   .info-text h2 {
     display: none;
   }
-
-
 
   .button-container {
     position: absolute;
@@ -204,8 +218,6 @@ useHead({
     border-radius: 25px;
     font-weight: bold;
   }
-
-
 
   .btn-viewp {
     font-size: 1rem;

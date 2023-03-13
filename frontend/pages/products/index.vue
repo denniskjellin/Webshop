@@ -4,9 +4,10 @@
     <CategoryNav />
     <h1 class="text-start text-gray-700 text-2xl mb-6 uppercase font-bold">Products</h1>
 
-    <!---product cards -->
+    <!---product cards, write out products in alpabetical order -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      <div v-for="p in products" class="w-full md:w-auto">
+      <div v-for="p in products
+          .sort((a, b) => a.title.localeCompare(b.title))" class="w-full md:w-auto">
         <ProductCard :product="p" />
       </div>
     </div>
