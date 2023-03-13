@@ -111,8 +111,6 @@ useHead({
   background-size: cover;
   background-position: center;
   position: relative;
-  
-
 }
 
 .info-text {
@@ -123,17 +121,9 @@ useHead({
   text-align: center;
   text-shadow: 2px 2px #000000;
 }
-
-.info-text h1 {
-  font-size: 2.8rem;
-  letter-spacing: 2.5px;
-
-}
-
 .button-container {
   position: absolute;
   bottom: 6rem;
-
   transform: translateX(-50%);
 }
 
@@ -166,6 +156,10 @@ useHead({
   text-align: center;
   font-size: 2rem;
   width: 100%;
+}
+
+.hero-text p{
+  text-shadow: 2px 2px #000000;
 }
 
 .btn-view {
