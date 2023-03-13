@@ -1,21 +1,21 @@
 <template>
-  <section class="hero-image-container mb-16">
-    <!-- Your hero image goes here -->
-    <div class="info-text">
-      <h1 class="uppercase">latest news</h1>
-      <h2 class="uppercase">we got the amino you need.</h2>
-    </div>
-    <div class="button-container">
-      <!--Navigation button-->
-      <NuxtLink to="/products/amino">
-        <span class="btn-viewp">View Product</span>
-      </NuxtLink>
-    </div>
-  </section>
+  <NuxtLink to="/products/amino">
+    <section class="hero-image-container mb-16">
+      <!-- Your hero image goes here -->
+      <div class="info-text">
+        <h2 class="text-4xl uppercase font-bold tracking-wider">latest news</h2>
+        <h2 class="text-1xl font-bold uppercase tracking-wider">we got the amino you need.</h2>
+      </div>
+      <div class="button-container">
+        <!--Navigation button-->
+        <span class="btn-view hidden md:block">View Product</span>
+      </div>
+    </section>
+  </NuxtLink>
   <section>
-    <h2 class="text-start text-2xl text-gray-700 uppercase font-bold">
+    <h1 class="text-start text-2xl text-gray-700 uppercase font-bold tracking-wide">
       Trending
-    </h2>
+    </h1>
 
     <!---product cards, filter and show highlighted products -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 border-b border-gray-200">
@@ -25,7 +25,7 @@
     </div>
 
     <div>
-      <h2 class="text-2xl mt-10 mb-1 text-gray-700 font-bold uppercase">
+      <h2 class="text-2xl mt-10 mb-1 text-gray-700 font-bold uppercase tracking-wide">
         Shop categories
       </h2>
       <CategoryNav></CategoryNav>
@@ -36,7 +36,7 @@
       <NuxtLink to="/products/protein">
         <div class="hero-image-2 mt-10">
           <div class="hero-text">
-            <p class="text-white uppercase font-bold">new isolate</p>
+            <p class="text-white uppercase font-bold tracking-wide">new isolate</p>
             <h2 class="text-2xl font-bold mb-2 mt-2">
               <span class="btn-viewp">Shop now</span>
             </h2>
@@ -47,7 +47,7 @@
       <NuxtLink to="/products">
         <div class="hero-image mt-10">
           <div class="hero-text">
-            <p class="text-white uppercase font-bold">all the essentials</p>
+            <p class="text-white uppercase font-bold tracking-wide">all the essentials</p>
             <h2 class="text-2xl font-bold mb-2 mt-2">
               <span class="btn-viewp">Explore products</span>
             </h2>
@@ -57,7 +57,7 @@
     </div>
   </section>
   <section>
-    <h3 class="text-2xl mt-10 mb-1 text-gray-700 font-bold uppercase">Info</h3>
+    <h3 class="text-2xl mt-10 mb-1 text-gray-700 font-bold uppercase tracking-wide">Info</h3>
     <p class="text-gray-700 text-lg mb-3">
       This is a fictional webshop created by Dennis Kjellin for a school
       project. The products are not real and the prices are not real. The
@@ -109,10 +109,7 @@ useHead({
   letter-spacing: 2.5px;
 }
 
-.info-text h2 {
-  font-size: 1rem;
-  font-weight: bold;
-}
+
 
 .button-container {
   position: absolute;
@@ -158,11 +155,7 @@ useHead({
     display: none;
   }
 
-  .info-text {
-    font-weight: bolder;
-    left: 50%;
-    top: 0;
-  }
+
 
   .button-container {
     position: absolute;
@@ -183,12 +176,7 @@ useHead({
     background-position: 90% 75%; /* Shift the focal point down slightly */
   }
 
-  .info-text h1 {
-    font-size: 1.4rem;
-  }
-  .info-text h2 {
-    font-size: 1rem;
-  }
+
 
   .btn-viewp {
     font-size: 1rem;
