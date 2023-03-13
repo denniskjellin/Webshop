@@ -15,7 +15,7 @@
     <!--Product info -->
     <div>
       <h1 class="text-2xl font-bold mb-5 uppercase">{{ product.title }}</h1>
-      <span class="bg-green-700 text-center text-white font-bold avaible"
+      <span class="text-center text-white font-bold avaible"
         >In stock</span
       >
       <p class="text-gray-700 text-lg mb-5 mt-3">{{ product.description }}</p>
@@ -97,5 +97,6 @@ button {
 .avaible {
   border-radius: 25px;
   padding: 0.3rem 0.5rem;
+  background-color: #1a8669;
 }
 </style>
