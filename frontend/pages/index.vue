@@ -149,6 +149,24 @@ useHead({
   width: 100%;
 }
 
+.btn-view {
+    background-color: #131313;
+    color: #fff;
+    padding: 0.8rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background-color 0.5s ease;
+  }
+
+  .btn-view:hover {
+    background-color: #383838;
+    color: #fff;
+    transition: background-color 0.5s ease;
+  }
+
 /* XS-Small screens */
 @media (max-width: 500px) {
   .info-text h2 {
@@ -174,6 +192,17 @@ useHead({
   .hero-image-container {
     height: 300px;
     background-position: 90% 75%; /* Shift the focal point down slightly */
+  }
+
+  .btn-view {
+    background-color: #131313;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 25px;
+    font-weight: bold;
   }
 
 
