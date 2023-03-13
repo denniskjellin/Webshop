@@ -18,7 +18,7 @@
     </h1>
 
     <!---product cards, filter and show highlighted products -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 border-b border-gray-200">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 border-b border-gray-200">
       <div v-for="p in products.filter((product) => product.isHighlighted)">
         <ProductCard :product="p" />
       </div>

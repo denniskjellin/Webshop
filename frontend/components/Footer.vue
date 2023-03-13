@@ -51,7 +51,8 @@ p {
 }
 
 a {
-  color:rgb(184, 184, 184)
+  color:rgb(184, 184, 184);
+  font-size: .9rem;
 }
 
 h3 {

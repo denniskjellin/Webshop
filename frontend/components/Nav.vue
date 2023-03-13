@@ -6,7 +6,7 @@
   </NuxtLink>
       <!--Hide on md screens + eventlistener on click-->
       <div class="md:hidden">
-        <button
+        <span
           class="flex items-center focus:outline-none"
           @click="isOpen = !isOpen"
         >
@@ -22,7 +22,7 @@
               clip-rule="evenodd"
             ></path>
           </svg>
-        </button>
+        </span>
       </div>
       <ul class="hidden md:flex gap-4">
         <li class="mr-4">
