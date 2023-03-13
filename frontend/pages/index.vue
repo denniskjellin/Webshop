@@ -1,16 +1,16 @@
 <template>
   <NuxtLink to="/products/amino">
-    <section class="hero-image-container mb-16">
+    <section class="hero-image-container mb-16 bg-black">
       <!-- Your hero image goes here -->
       <div class="info-text">
-        <h2 class="text-4xl uppercase font-bold tracking-wider">latest news</h2>
-        <h2 class="text-1xl font-bold uppercase tracking-wider">
+        <h2 class="text-4xl hidden md:block text-white uppercase font-bold tracking-wider">latest news</h2>
+        <h2 class="text-1xl hidden md:block text-white font-bold uppercase tracking-wider">
           we got the amino you need.
         </h2>
       </div>
       <div class="button-container">
         <!--Navigation button-->
-        <span class="btn-view">Shop now</span>
+        <span class="btn-viewp">Shop now</span>
       </div>
     </section>
   </NuxtLink>
@@ -44,7 +44,7 @@
     <!---info section -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <NuxtLink to="/products/protein">
-        <div class="hero-image-2 mt-10">
+        <div class="hero-image-2 mt-10 bg-black">
           <div class="hero-text">
             <p class="text-white uppercase font-bold tracking-wide">
               new isolate
@@ -57,7 +57,7 @@
       </NuxtLink>
       <!--- secondary hero-img -->
       <NuxtLink to="/products">
-        <div class="hero-image mt-10">
+        <div class="hero-image mt-10 bg-black">
           <div class="hero-text">
             <p class="text-white uppercase font-bold tracking-wide">
               all the essentials
@@ -107,17 +107,17 @@ useHead({
 .hero-image-container {
   width: 100%;
   height: 35vh;
-  background-image: url("/images/accio.jpg");
+  background-image: url("/images/heroimg.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
-  text-align: center;
+
 }
 
 .info-text {
   position: absolute;
   top: 50%;
-  left: 25%;
+  left: 20%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
@@ -125,12 +125,13 @@ useHead({
 .info-text h1 {
   font-size: 2.8rem;
   letter-spacing: 2.5px;
+
 }
 
 .button-container {
   position: absolute;
   bottom: 6rem;
-  left: 25%;
+
   transform: translateX(-50%);
 }
 
@@ -185,27 +186,24 @@ useHead({
 
 /* XS-Small screens */
 @media (max-width: 500px) {
-  .info-text h2 {
-    display: none;
-  }
-
   .button-container {
     position: absolute;
     top: 80%;
-    margin-left: 6.2rem;
+    margin-left: 30%;
     transform: translate(-50%, -50%);
   }
 
   .info-text h1 {
     letter-spacing: 1px;
   }
+
 }
 
 /* Smaler screens */
 @media (max-width: 820px) {
   .hero-image-container {
     height: 300px;
-    background-position: 90% 75%; /* Shift the focal point down slightly */
+    background-position: 50% 50%; /* Shift the focal point down slightly */
   }
 
   .btn-view {
@@ -225,9 +223,11 @@ useHead({
 
   .button-container {
     bottom: 4rem;
-    left: 25%;
+    left: 20%;
   }
 }
+
+
 
 /* Large screens */
 @media (min-width: 1200px) {
@@ -237,8 +237,8 @@ useHead({
   }
   .button-container {
     position: absolute;
-    bottom: 12rem;
-    left: 25%;
+    bottom: 13rem;
+    left: 20%;
     transform: translateX(-50%);
   }
 }
