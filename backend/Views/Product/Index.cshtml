@@ -15,7 +15,7 @@
         <div class="input-group">
             <input type="text" name="searchString" placeholder="Search product.." class="form-control" />
             <div class="input-group-append">
-                <input type="submit" class="btn btn-outline-secondary" value="Search"></input>
+                <input type="submit" class="btn btn-outline-secondary" value="Search">
             </div>
         </div>
     </form>
@@ -57,7 +57,7 @@
                         @if (item.ImageName != "empty.jpg")
                         {
                                 <a href="productimages/@Html.DisplayFor(modelItem => item.ImageName)" target="_blank">
-                                    <img class="thumb" src="productimages/thumb_@Html.DisplayFor(modelItem => item.ImageName)" />
+                                    <img class="thumb" alt="@Html.DisplayFor(modelItem => item.ImageAlt)" src="productimages/thumb_@Html.DisplayFor(modelItem => item.ImageName)" />
                                 </a>
                         }
                         else
