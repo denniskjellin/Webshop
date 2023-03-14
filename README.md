@@ -17,7 +17,7 @@ dotnet run
 Skapa sedan ett konto och logga in för att administrera produkter & kategorier.
 
 ## API endpoints
-### 
+### Product
 | Metod | Ändpunkt | Beskrivning |
 | :---         | :---           | :---          |
 | GET   |   /api/products    |  Hämta produkter  | 
