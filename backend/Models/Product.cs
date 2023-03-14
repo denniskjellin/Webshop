@@ -34,7 +34,6 @@ namespace backend.Models
         [NotMapped]
         public string ImageWebp { get; set; } = String.Empty;
 
-        [Required]
         [StringLength(100, MinimumLength = 2, ErrorMessage = "Alt Text must be between 2 and 100 characters long.")] // min max length
         [Display(Name = "Alt Text")]
         public string? ImageAlt { get; set; }
