@@ -3,8 +3,8 @@
     <section class="hero-image-container mb-16 bg-black">
       <!-- Your hero image goes here -->
       <div class="info-text">
-        <h2 class="text-4xl hidden md:block text-white uppercase font-bold tracking-wider ">latest news</h2>
-        <h2 class="text-1xl hidden md:block text-white font-bold uppercase tracking-wider ">
+        <h2 class="text-4xl  text-white uppercase font-bold tracking-wider ">latest news</h2>
+        <h2 class="text-1xl  text-white font-bold uppercase tracking-wider ">
           we got the amino you need
         </h2>
       </div>
@@ -189,9 +189,19 @@ useHead({
     transform: translate(-50%, -50%);
   }
 
-  .info-text h1 {
-    letter-spacing: 1px;
-  }
+ 
+
+  .info-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  text-shadow: 2px 2px #000000;
+}
+.info-text h2 {
+font-size: 1.2rem;
+}
 
 }
 
@@ -225,7 +235,7 @@ useHead({
 
 
 /* Large screens */
-@media (min-width: 1200px) {
+@media (min-width: 821px) {
   .hero-image-container {
     height: 600px;
     background-position: 50% 50%; /* Center the focal point */

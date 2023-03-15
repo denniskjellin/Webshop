@@ -34,7 +34,7 @@
         </div>
       </div>
       <div class="container mx-auto px-4">
-        <p class="text-center mt-4">&copy; 2023 Accio. All rights reserved.</p>
+        <p class="text-center mt-4">&copy; 2023 Accio. Fictional webshop.</p>
       </div>
     </footer>
   </div>
