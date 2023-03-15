@@ -11,8 +11,13 @@
         <div class="col-md-11">
             <div class="card mb-5 mt-5">
                 <div class="card-body">
+                    @if (SignInManager.IsSignedIn(User)) {
                     <h1 class="display-4 text-center mb-4">ACCIO</h1>
                     <p class="lead text-center mb-5">Intranet for ACCIO Industries. Manage products and categories.</p>
+                    } else {
+                         <h1 class="display-4 text-center mb-4">ACCIO</h1>
+                    <p class="lead text-center mb-5">Intranet for ACCIO Industries. Sign in to access and manage content.</p>
+                    }
                     <div class="row justify-content-center">
                         @if (SignInManager.IsSignedIn(User)) {
                         <div class="col-md-4 mb-4">
