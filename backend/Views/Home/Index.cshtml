@@ -1,4 +1,8 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -10,6 +14,7 @@
                     <h1 class="display-4 text-center mb-4">ACCIO</h1>
                     <p class="lead text-center mb-5">Intranet for ACCIO Industries. Manage products and categories.</p>
                     <div class="row justify-content-center">
+                        @if (SignInManager.IsSignedIn(User)) {
                         <div class="col-md-4 mb-4">
                             <div class="card-styled">
                                 <div class="card-body text-center">
@@ -30,6 +35,9 @@
                                 </div>
                             </div>
                         </div>
+              
+                        } else {
+                        
                          
                         <div class="col-md-4 mb-4">
                             <div class="card-styled">
@@ -41,6 +49,17 @@
                                 </div>
                             </div>
                         </div>
+                           <div class="col-md-4 mb-4">
+                            <div class="card-styled">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-box-arrow-in-right fa-3x mb-3"></i>
+                                    <h2 class=" h4 card-title mb-3">Login</h2>
+                                    <p class="card-text">Join ACCIO!</p>
+                                    <a class="btn btn-primary" asp-area="Identity" asp-page="/Account/Login">Go to Login</a>
+                                </div>
+                            </div>
+                        </div>
+                        }
                        
                     </div>
                 </div>
