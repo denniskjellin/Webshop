@@ -10,14 +10,15 @@ namespace backend.Models
         public int ProductId { get; set; }
 
         [Required]
-        [StringLength(100, MinimumLength = 2)]
+        [StringLength(100, MinimumLength = 2, ErrorMessage = "Product title must be between 2 and 100 characters long.")]
         public string? Title { get; set; }
 
         [Required]
-        [StringLength(1000, MinimumLength = 5)] // set min/max length
+        [StringLength(1000, MinimumLength = 5, ErrorMessage = "Product description must be between 2 and 1000 characters long.")] // set min/max length
         public string? Description { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Product price is required.")]
+
         public decimal Price { get; set; }
 
         [Required]
