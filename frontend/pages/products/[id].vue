@@ -1,8 +1,8 @@
 <template>
-    <Head>
-      <Title>{{ product.title }}</Title>
-      <Meta name="description" :content="product.description" />
-    </Head>
+  <Head>
+    <Title>{{ product.title }}</Title>
+    <Meta name="description" :content="product.description" />
+  </Head>
 
   <section
     class="grid grid-cols-1 md:grid-cols-2 gap-4 border-b border-gray-300 pb-5"
@@ -14,9 +14,7 @@
     <!--Product info -->
     <div>
       <h1 class="text-2xl font-bold mb-5 uppercase">{{ product.title }}</h1>
-      <span class="text-center text-white font-bold avaible"
-        >In stock</span
-      >
+      <span class="text-center text-white font-bold avaible">In stock</span>
       <p class="text-gray-700 text-lg mb-5 mt-3">{{ product.description }}</p>
       <p class="text-gray-700 text-lg mb-10">
         The product will be a addition support for your daily source of
@@ -34,10 +32,12 @@
           </select>
         </div>
 
-        <button @click="addToBasket" class="text-white w-full md:w-2/4 h-10 font-bold rounded-md">
-  <i class="fas fa-shopping-cart mr-2"></i> Add to cart
-</button>
-
+        <button
+          @click="addToBasket"
+          class="text-white w-full md:w-2/4 h-10 font-bold rounded-md"
+        >
+          <i class="fas fa-shopping-cart mr-2"></i> Add to cart
+        </button>
       </div>
       <p class="text-sm text-gray-500">
         This is a supplement and should not be used as an alternative to a
@@ -47,30 +47,38 @@
       </p>
     </div>
   </section>
-  
 </template>
 
 <script setup>
-import basketStore from '~/store/basket'
+import basketStore from "~/store/basket";
 
+// Function to add the selected product with the specified quantity to the basket.
 const addToBasket = () => {
+  // Create an item object with the required product properties.
   const item = {
     productId: product.value.productId,
     title: product.value.title,
     price: product.value.price,
     image: product.value.imageName,
     imageAlt: product.value.imageAlt,
-    quantity,
-  }
+    // Set the quantity of the item based on the selected value from the dropdown.
+    quantity: quantity.value,
+  };
 
-  basketStore.addToBasket(item)
-  console.log(basketStore.basket)
-}
+  // Call the addToBasket function from the basketStore to add the item to the basket.
+  basketStore.addToBasket(item);
+};
 
+// quantity and maxQuantity
+const quantity = ref(1);
+const maxQuantity = ref(10);
+
+// Set page layout
 definePageMeta({
   layout: "products",
 });
 
+// Fetch product data
 // route id
 const { id } = useRoute().params;
 // url and tag on id
@@ -85,13 +93,6 @@ if (!product.value) {
     fatal: true,
   });
 }
-
-// maximum quantity allowed for purchase2
-const maxQuantity = 50;
-// quantity selected by user
-let quantity = 1;
-
-
 </script>
 
 <style lang="scss" scoped>
