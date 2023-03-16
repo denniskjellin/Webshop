@@ -39,9 +39,9 @@
           </div>
           <button
             @click="removeFromBasket(index)"
-            class="bg-red-700 hover:bg-red-600 text-white mt-2 py-1 px-2 rounded"
+            class="mt-2 py-1 px-2 rounded inline-flex items-center"
           >
-            Remove
+            <i class="fas fa-trash-alt"></i>
           </button>
         </div>
       </div>
