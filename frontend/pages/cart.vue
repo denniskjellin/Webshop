@@ -1,16 +1,17 @@
 <template>
   <div class="container mx-auto py-6">
-    <h1 class="text-2xl font-bold mb-6">Shopping Cart</h1>
-    <!---check if baskit is empty or not -->
-    <div v-if="basket.items.length === 0">
-      <p>Your cart is empty.</p>
-    </div>
+    <div class="mx-auto w-full lg:w-3/4 xl:w-1/2">
+      <h1 class="text-2xl font-bold mb-6">Shopping Cart</h1>
+      <!---check if baskit is empty or not -->
+      <div v-if="basket.items.length === 0">
+        <p>Your cart is empty.</p>
+      </div>
     <!--if cart not empty do this-->
-    <div v-else class="flex flex-wrap justify-center">
+    <div v-else>
       <div
         v-for="(item, index) in basket.items"
         :key="item.ProductId"
-        class="bg-white shadow-md p-4 mb-4 rounded-lg flex flex-col md:flex-row items-start md:items-center w-full md:w-3/5 "
+        class="bg-white shadow-md p-4 mb-4 rounded-lg flex flex-col md:flex-row items-start md:items-center w-full"
       >
         <div class="flex-1">
           <div class="font-bold text-xl mb-2">{{ item.title }}</div>
@@ -50,9 +51,19 @@
           </button>
         </div>
       </div>
-    </div>
-    <div class="mt-6">
-      <h2 class="text-xl font-bold">Total: {{ basket.total }}</h2>
+      <div class="mt-6">
+          <h2 class="text-xl font-bold bg-yellow-300 p-2 rounded inline-block">
+            Total: {{ basket.total }}
+          </h2>
+        </div>
+        <div class="mt-4">
+          <button
+            class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
+          >
+            Checkout
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </template>
