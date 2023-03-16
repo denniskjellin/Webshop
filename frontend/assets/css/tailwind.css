@@ -30,8 +30,26 @@ p {
     font-weight: bold;
     transition: background-color 0.5s ease;
   }
+
+  .btn-viewp-c {
+    background-color: #1a8669;
+    color: #fff;
+    padding: 0.5rem 3.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: background-color 0.5s ease;
+  }
   
   .btn-viewp:hover {
+    background-color: #0e5c35;
+    color: #fff;
+    transition: background-color 0.5s ease;
+  }
+
+  .btn-viewp-c:hover {
     background-color: #0e5c35;
     color: #fff;
     transition: background-color 0.5s ease;

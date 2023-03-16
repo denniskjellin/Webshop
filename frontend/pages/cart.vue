@@ -52,16 +52,16 @@
         </div>
       </div>
       <div class="mt-6">
-          <h2 class="text-xl font-bold bg-yellow-300 p-2 rounded inline-block">
-            Total: {{ basket.total }}
-          </h2>
-        </div>
-        <div class="mt-4">
-          <button
-            class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
-          >
-            Checkout
-          </button>
+          <div class="border-t border-gray-200 pt-6 flex items-center justify-between">
+            <h2 class="text-xl font-bold">
+              Total: <span class="text-green-600">{{ basket.total }}:-</span>
+            </h2>
+            <button
+              class="btn-viewp-c text-white font-bold py-2 px-6 rounded shadow"
+            >
+              Checkout
+            </button>
+          </div>
         </div>
       </div>
     </div>
