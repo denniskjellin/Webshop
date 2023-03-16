@@ -1,6 +1,7 @@
 <template>
     <div class="container mx-auto py-6">
       <h1 class="text-2xl font-bold mb-6">Shopping Cart</h1>
+      <!---check if baskit is empty or not -->
       <div v-if="basket.items.length === 0">
         <p>Your cart is empty.</p>
       </div>
@@ -10,7 +11,7 @@
           <div class="flex-1">
             <div class="font-bold text-xl mb-2">{{ item.title }}</div>
             <div class="text-gray-600 mb-2">{{ item.description }}</div>
-            <div class="text-gray-700 mb-2">Price: {{ item.price }}</div>
+            <div class="text-gray-700 mb-2">Price: {{ item.price }}:-</div>
             <div class="text-gray-700 mb-2">Quantity: {{ item.quantity }}</div>
             <div class="text-gray-800 mb-2 font-semibold">Subtotal: {{ item.price * item.quantity }}</div>
             <button @click="removeFromBasket(index)" class="bg-red-700 hover:bg-red-600 text-white py-1 px-2 rounded">Remove</button>
