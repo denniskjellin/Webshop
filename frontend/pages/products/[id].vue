@@ -1,10 +1,9 @@
 <template>
-  <div>
     <Head>
       <Title>{{ product.title }}</Title>
       <Meta name="description" :content="product.description" />
     </Head>
-  </div>
+
   <section
     class="grid grid-cols-1 md:grid-cols-2 gap-4 border-b border-gray-300 pb-5"
   >
@@ -56,7 +55,7 @@ import basketStore from '~/store/basket'
 
 const addToBasket = () => {
   const item = {
-    ProductId: product.value.productId,
+    productId: product.value.productId,
     title: product.value.title,
     price: product.value.price,
     quantity,
@@ -65,8 +64,6 @@ const addToBasket = () => {
   basketStore.addToBasket(item)
   console.log(basketStore.basket)
 }
-
-
 
 definePageMeta({
   layout: "products",
