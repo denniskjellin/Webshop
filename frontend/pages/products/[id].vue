@@ -32,12 +32,29 @@
           </select>
         </div>
         <!-- display the notification of added product -->
-        <div
-          v-show="showNotification"
-          class="notification bg-green-500 text-white p-2 rounded-md mb-8"
-        >
-          Product added to cart
-        </div>
+        <transition name="fade">
+          <div
+            v-show="showNotification"
+            class="notification bg-green-500 text-white p-2 rounded-md mb-8"
+          >
+            <span>Product added to cart</span>
+            <div class="ml-2 inline-block animate-spin">
+              <svg
+                class="w-4 h-4 text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M22 12c0-5.523-4.477-10-10-10"></path>
+              </svg>
+            </div>
+          </div>
+        </transition>
 
         <!-- add to basket click -->
         <button
@@ -73,7 +90,6 @@ const addToBasket = () => {
     quantity: quantity.value,
   };
 
-
   // display notification
   displayNotification();
 
@@ -83,8 +99,8 @@ const addToBasket = () => {
 
 // notification
 const showNotification = ref(false);
-
-const displayNotification = (duration = 3000) => {
+// duration of notification
+const displayNotification = (duration = 1600) => {
   showNotification.value = true;
   setTimeout(() => {
     showNotification.value = false;
@@ -118,6 +134,13 @@ if (!product.value) {
 </script>
 
 <style lang="scss" scoped>
+/* Notification fade in and out */
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity 0.4s ease-out;
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
+  }
 /* Optional styles for image aspect ratio */
 .w-full {
   aspect-ratio: 4/4;
