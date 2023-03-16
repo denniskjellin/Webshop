@@ -40,17 +40,17 @@ function addToBasket(item) {
   // Update the basket total by adding the product of the item's price and quantity.
   basket.total += item.price * item.quantity;
   // Store the updated basket items in localStorage.
-  saveToLocalStorage.setItem("basketItems", JSON.stringify(basket.items));
+  saveToLocalStorage("basketItems", JSON.stringify(basket.items));
   // Store the updated basket total in localStorage.
-  saveToLocalStorage.setItem("basketTotal", basket.total);
+  saveToLocalStorage("basketTotal", basket.total);
 }
 
 // Function to increase the quantity of an item in the basket by 1 and save to local storage
 function increaseQuantity(index) {
   basket.items[index].quantity++;
   basket.total += basket.items[index].price;
-  saveToLocalStorage.setItem("basketItems", JSON.stringify(basket.items));
-  saveToLocalStorage.setItem("basketTotal", basket.total);
+  saveToLocalStorage("basketItems", JSON.stringify(basket.items));
+  saveToLocalStorage("basketTotal", basket.total);
 }
 
 // Function to decrease the quantity of an item in the basket by 1, or remove it if the quantity is 1
@@ -58,8 +58,8 @@ function decreaseQuantity(index) {
   if (basket.items[index].quantity > 1) {
     basket.items[index].quantity--;
     basket.total -= basket.items[index].price;
-    saveToLocalStorage.setItem("basketItems", JSON.stringify(basket.items));
-    saveToLocalStorage.setItem("basketTotal", basket.total);
+    saveToLocalStorage("basketItems", JSON.stringify(basket.items));
+    saveToLocalStorage("basketTotal", basket.total);
   } else {
     removeFromBasket(index);
   }
@@ -74,9 +74,9 @@ function removeFromBasket(index) {
   // Update the basket total price.
   basket.total -= item.price;
   // Store the updated basket
-  saveToLocalStorage.setItem("basketItems", JSON.stringify(basket.items));
+  saveToLocalStorage("basketItems", JSON.stringify(basket.items));
   // Store the updated basket total amount in localStorage.
-  saveToLocalStorage.setItem("basketTotal", basket.total);
+  saveToLocalStorage("basketTotal", basket.total);
 }
 
 // Export the reactive basket object and the addToBasket and removeFromBasket functions.
