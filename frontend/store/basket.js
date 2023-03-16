@@ -1,13 +1,14 @@
 // Import the 'reactive' function from the Vue library.
 import { reactive } from "vue";
 
-// define get initial basket function
+// define get initial basket function,
+// which returns the initial basket state from localStorage if it exists, or an empty basket if it doesn't.
 const getInitialBasket = () => {
-  let items = [];
-  let total = 0;
+  let items = []; // basket items
+  let total = 0; // basket total
   
-  if (typeof window !== "undefined") {
-    items = JSON.parse(localStorage.getItem("basketItems") || "[]");
+  if (typeof window !== "undefined") { // check if window is defined
+    items = JSON.parse(localStorage.getItem("basketItems") || "[]"); 
     total = parseFloat(localStorage.getItem("basketTotal")) || 0;
   }
 
