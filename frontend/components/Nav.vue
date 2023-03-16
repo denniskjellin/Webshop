@@ -2,8 +2,8 @@
   <header class="bg-white shadow-sm">
     <nav class="container mx-auto p-4 flex justify-between items-center">
       <NuxtLink to="/" class="flex items-center">
-    <img src="/images/logo.png" alt="Accio logo" class="logo">
-  </NuxtLink>
+        <img src="/images/logo.png" alt="Accio logo" class="logo" />
+      </NuxtLink>
       <!--Hide on md screens + eventlistener on click-->
       <div class="md:hidden">
         <span
@@ -26,53 +26,70 @@
       </div>
       <ul class="hidden md:flex gap-4">
         <li class="mr-4">
-          <NuxtLink to="/" class="text-gray-700 text-lg font-bold tracking-wider hover:text-green-700"
+          <NuxtLink
+            to="/"
+            class="text-gray-700 text-lg font-bold tracking-wider hover:text-green-700"
             >Home</NuxtLink
           >
         </li>
         <li class="mr-4">
-          <NuxtLink to="/products" class="text-gray-700 text-lg font-bold tracking-wider hover:text-green-700"
+          <NuxtLink
+            to="/products"
+            class="text-gray-700 text-lg font-bold tracking-wider hover:text-green-700"
             >Products</NuxtLink
           >
         </li>
         <li class="mr-4">
-          <NuxtLink to="/about" class="text-gray-700 text-lg font-bold tracking-wider hover:text-green-700"
+          <NuxtLink
+            to="/about"
+            class="text-gray-700 text-lg font-bold tracking-wider hover:text-green-700"
             >About</NuxtLink
           >
         </li>
         <li class="mb-0">
-          <NuxtLink to="/cart" class="text-gray-700 text-lg font-bold tracking-wider hover:text-green-700"
-            >Cart</NuxtLink
+          <NuxtLink
+            to="/cart"
+            class="text-gray-700 text-lg font-bold tracking-wider hover:text-green-700"
           >
+            <i class="fas fa-shopping-cart"></i>
+            Cart
+          </NuxtLink>
         </li>
-        
-    
       </ul>
-      
-      
     </nav>
     <!--hide on md screens-->
     <div class="md:hidden bg-white" :class="{ block: isOpen, hidden: !isOpen }">
       <ul class="px-4 py-3">
         <li class="mb-2">
-          <NuxtLink to="/" class="text-gray-700 text-lg font-bold tracking-wider hover:text-green-700"
+          <NuxtLink
+            to="/"
+            class="text-gray-700 text-lg font-bold tracking-wider hover:text-green-700"
             >Home</NuxtLink
           >
         </li>
         <li class="mb-2">
-          <NuxtLink to="/about" class="text-gray-700 text-lg font-bold tracking-wider hover:text-green-700"
+          <NuxtLink
+            to="/about"
+            class="text-gray-700 text-lg font-bold tracking-wider hover:text-green-700"
             >About</NuxtLink
           >
         </li>
         <li class="mb-0">
-          <NuxtLink to="/products" class="text-gray-700 text-lg font-bold tracking-wider hover:text-green-700"
+          <NuxtLink
+            to="/products"
+            class="text-gray-700 text-lg font-bold tracking-wider hover:text-green-700"
             >Products</NuxtLink
           >
         </li>
         <li class="mb-0">
-          <NuxtLink to="/cart" class="text-gray-700 text-lg font-bold tracking-wider hover:text-green-700"
-            >Cart</NuxtLink
+          <NuxtLink
+            to="/cart"
+            class="text-gray-700 text-lg font-bold tracking-wider hover:text-green-700"
           >
+            <i class="fas fa-shopping-cart"></i>
+            <!-- add cart icon here -->
+            Cart
+          </NuxtLink>
         </li>
       </ul>
     </div>

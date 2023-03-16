@@ -1,14 +1,16 @@
 // Import the 'reactive' function from the Vue library.
 import { reactive } from "vue";
 
+
 // define get initial basket function,
 // which returns the initial basket state from localStorage if it exists, or an empty basket if it doesn't.
 const getInitialBasket = () => {
   let items = []; // basket items
   let total = 0; // basket total
-  
-  if (typeof window !== "undefined") { // check if window is defined
-    items = JSON.parse(localStorage.getItem("basketItems") || "[]"); 
+
+  if (typeof window !== "undefined") {
+    // check if window is defined
+    items = JSON.parse(localStorage.getItem("basketItems") || "[]");
     total = parseFloat(localStorage.getItem("basketTotal")) || 0;
   }
 
@@ -17,7 +19,7 @@ const getInitialBasket = () => {
 
 // define save to local storage function
 const saveToLocalStorage = (key, value) => {
-  if (typeof window !== 'undefined') {
+  if (typeof window !== "undefined") {
     localStorage.setItem(key, value);
   }
 };
@@ -83,6 +85,20 @@ function removeFromBasket(index) {
   saveToLocalStorage("basketTotal", basket.total);
 }
 
+// Function to clear the basket and local storage after checkout.
+function checkout() {
+  // Clear the basket items and total.
+  basket.items = [];
+  basket.total = 0;
+  // Clear the basket items and total from local storage.
+  localStorage.removeItem("basketItems");
+  localStorage.removeItem("basketTotal");
+  // Show an alert to the user that the checkout was successful.
+  window.alert("Thank you for your purchase! Your cart has been emptied.");
+  // Redirect the user to a different route.
+  useRouter().push("/thanks");
+}
+
 // Export the reactive basket object and the addToBasket and removeFromBasket functions.
 export default {
   basket,
@@ -90,4 +106,5 @@ export default {
   removeFromBasket,
   increaseQuantity,
   decreaseQuantity,
+  checkout,
 };
