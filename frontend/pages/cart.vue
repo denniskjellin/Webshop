@@ -6,11 +6,11 @@
       <p>Your cart is empty.</p>
     </div>
     <!--if cart not empty do this-->
-    <div v-else>
+    <div v-else class="flex flex-wrap justify-center">
       <div
         v-for="(item, index) in basket.items"
         :key="item.ProductId"
-        class="bg-white shadow-md p-4 mb-4 rounded-lg flex flex-col md:flex-row items-start md:items-center"
+        class="bg-white shadow-md p-4 mb-4 rounded-lg flex flex-col md:flex-row items-start md:items-center w-full md:w-3/5 "
       >
         <div class="flex-1">
           <div class="font-bold text-xl mb-2">{{ item.title }}</div>
@@ -50,9 +50,9 @@
           </button>
         </div>
       </div>
-      <div class="mt-6">
-        <h2 class="text-xl font-bold">Total: {{ basket.total }}</h2>
-      </div>
+    </div>
+    <div class="mt-6">
+      <h2 class="text-xl font-bold">Total: {{ basket.total }}</h2>
     </div>
   </div>
 </template>
