@@ -31,7 +31,15 @@
             <option v-for="n in maxQuantity" :value="n">{{ n }}</option>
           </select>
         </div>
+        <!-- display the notification of added product -->
+        <div
+          v-show="showNotification"
+          class="notification bg-green-500 text-white p-2 rounded-md mb-8"
+        >
+          Product added to cart
+        </div>
 
+        <!-- add to basket click -->
         <button
           @click="addToBasket"
           class="text-white w-full md:w-2/4 h-10 font-bold rounded-md"
@@ -65,8 +73,22 @@ const addToBasket = () => {
     quantity: quantity.value,
   };
 
+
+  // display notification
+  displayNotification();
+
   // Call the addToBasket function from the basketStore to add the item to the basket.
   basketStore.addToBasket(item);
+};
+
+// notification
+const showNotification = ref(false);
+
+const displayNotification = (duration = 3000) => {
+  showNotification.value = true;
+  setTimeout(() => {
+    showNotification.value = false;
+  }, duration);
 };
 
 // quantity and maxQuantity

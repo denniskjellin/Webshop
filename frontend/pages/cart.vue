@@ -43,12 +43,7 @@
               +
             </button>
           </div>
-          <button
-            @click="removeFromBasket(index)"
-            class="bg-red-700 hover:bg-red-600 text-white py-1 px-2 rounded inline-flex items-center"
-          >
-            <i class="fas fa-trash-alt mr-1"></i>Delete
-          </button>
+   
         </div>
       </div>
       <div class="mt-6">
