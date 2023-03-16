@@ -40,11 +40,12 @@
             >About</NuxtLink
           >
         </li>
-     <!--    <li class="mr-4">
-          <NuxtLink to="/basket" class="text-gray-700 text-lg font-bold tracking-wider hover:text-green-700 hover:underline"
-            >Basket</NuxtLink
+        <li class="mb-0">
+          <NuxtLink to="/cart" class="text-gray-700 text-lg font-bold tracking-wider hover:text-green-700"
+            >Cart</NuxtLink
           >
-        </li> -->
+        </li>
+        
     
       </ul>
       
@@ -66,6 +67,11 @@
         <li class="mb-0">
           <NuxtLink to="/products" class="text-gray-700 text-lg font-bold tracking-wider hover:text-green-700"
             >Products</NuxtLink
+          >
+        </li>
+        <li class="mb-0">
+          <NuxtLink to="/cart" class="text-gray-700 text-lg font-bold tracking-wider hover:text-green-700"
+            >Cart</NuxtLink
           >
         </li>
       </ul>
