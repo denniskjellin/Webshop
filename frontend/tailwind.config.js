@@ -17,5 +17,6 @@ module.exports = {
     plugins: [
       
     ],
+    classes: ['animate-spin'],
   };
   
