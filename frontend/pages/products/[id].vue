@@ -58,6 +58,8 @@ const addToBasket = () => {
     productId: product.value.productId,
     title: product.value.title,
     price: product.value.price,
+    image: product.value.imageName,
+    imageAlt: product.value.imageAlt,
     quantity,
   }
 
