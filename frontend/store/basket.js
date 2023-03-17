@@ -97,18 +97,38 @@ function removeFromBasket(index) {
 
 // Function to clear the basket and local storage after checkout.
 function checkout() {
-  // Clear the basket items and total.
-  basket.items = [];
-  basket.total = 0;
-  basket.quantity = 0; // <-- reset quantity to 0
-  // Clear the basket items and total from local storage.
-  localStorage.removeItem("basketItems");
-  localStorage.removeItem("basketTotal");
-  localStorage.removeItem("basketQuantity");
-  // Show an alert to the user that the checkout was successful.
-  window.alert("Thank you for your purchase! Your cart has been emptied.");
-  // Redirect the user to a different route.
-  useRouter().push("/thanks");
+  const endpointUrl = 'http://localhost:5146/api/OrdersApi' // Replace with your actual API endpoint URL
+  const requestOptions = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(basket.items)
+  }
+
+  fetch(endpointUrl, requestOptions)
+    .then(response => {
+      if (response.ok) {
+        // Clear the basket items and total.
+        basket.items = []
+        basket.total = 0
+        basket.quantity = 0 // <-- reset quantity to 0
+        // Clear the basket items and total from local storage.
+        localStorage.removeItem('basketItems')
+        localStorage.removeItem('basketTotal')
+        localStorage.removeItem('basketQuantity')
+        // Show an alert to the user that the checkout was successful.
+        window.alert('Thank you for your purchase! Your cart has been emptied.')
+        // Redirect the user to a different route.
+        useRouter().push('/thanks')
+      } else {
+        throw new Error('Failed to checkout')
+      }
+    })
+    .catch(error => {
+      console.error(error)
+      window.alert('Failed to checkout. Please try again.')
+    })
 }
 
 
