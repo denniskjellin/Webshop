@@ -156,4 +156,13 @@ p {
     display: none;
   }
 }
+
+@media (max-width: 767px) {
+  .bg-white {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+}
+
 </style>
