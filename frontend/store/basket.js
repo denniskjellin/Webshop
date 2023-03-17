@@ -100,6 +100,7 @@ function checkout() {
   // Clear the basket items and total.
   basket.items = [];
   basket.total = 0;
+  basket.quantity = 0; // <-- reset quantity to 0
   // Clear the basket items and total from local storage.
   localStorage.removeItem("basketItems");
   localStorage.removeItem("basketTotal");
@@ -109,6 +110,7 @@ function checkout() {
   // Redirect the user to a different route.
   useRouter().push("/thanks");
 }
+
 
 // Export the reactive basket object and the addToBasket and removeFromBasket functions.
 export default {
