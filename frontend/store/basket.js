@@ -128,6 +128,7 @@ function checkout() {
     .catch(error => {
       console.error(error)
       window.alert('Failed to checkout. Please try again.')
+      console.log(basket.items)
     })
 }
 
