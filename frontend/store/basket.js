@@ -7,14 +7,16 @@ import { reactive } from "vue";
 const getInitialBasket = () => {
   let items = []; // basket items
   let total = 0; // basket total
+  let quantity = 0; // basket quantity
 
   if (typeof window !== "undefined") {
     // check if window is defined
     items = JSON.parse(localStorage.getItem("basketItems") || "[]");
     total = parseFloat(localStorage.getItem("basketTotal")) || 0;
+    quantity = parseInt(localStorage.getItem("basketQuantity")) || 0;
   }
 
-  return { items, total };
+  return { items, total, quantity };
 };
 
 // define save to local storage function
@@ -43,13 +45,18 @@ function addToBasket(item) {
     basket.items.push(item);
   }
 
+  // Update the basket quantity to reflect the total number of items in the basket.
+  basket.quantity += item.quantity;
+
   // Update the basket total by adding the product of the item's price and quantity.
   basket.total += item.price * item.quantity;
-  // Store the updated basket items in localStorage.
+
+  // Store the updated basket items, quantity, and total in localStorage.
   saveToLocalStorage("basketItems", JSON.stringify(basket.items));
-  // Store the updated basket total in localStorage.
   saveToLocalStorage("basketTotal", basket.total);
+  saveToLocalStorage("basketQuantity", basket.quantity);
 }
+
 
 // Function to increase the quantity of an item in the basket by 1 and save to local storage
 function increaseQuantity(index) {
@@ -57,6 +64,7 @@ function increaseQuantity(index) {
   basket.total += basket.items[index].price;
   saveToLocalStorage("basketItems", JSON.stringify(basket.items));
   saveToLocalStorage("basketTotal", basket.total);
+  saveToLocalStorage("basketQuantity", basket.quantity);
 }
 
 // Function to decrease the quantity of an item in the basket by 1, or remove it if the quantity is 1
@@ -66,6 +74,7 @@ function decreaseQuantity(index) {
     basket.total -= basket.items[index].price;
     saveToLocalStorage("basketItems", JSON.stringify(basket.items));
     saveToLocalStorage("basketTotal", basket.total);
+    saveToLocalStorage("basketQuantity", basket.quantity);
   } else {
     removeFromBasket(index);
   }
@@ -83,6 +92,7 @@ function removeFromBasket(index) {
   saveToLocalStorage("basketItems", JSON.stringify(basket.items));
   // Store the updated basket total amount in localStorage.
   saveToLocalStorage("basketTotal", basket.total);
+  saveToLocalStorage("basketQuantity", basket.quantity);
 }
 
 // Function to clear the basket and local storage after checkout.
@@ -93,6 +103,7 @@ function checkout() {
   // Clear the basket items and total from local storage.
   localStorage.removeItem("basketItems");
   localStorage.removeItem("basketTotal");
+  localStorage.removeItem("basketQuantity");
   // Show an alert to the user that the checkout was successful.
   window.alert("Thank you for your purchase! Your cart has been emptied.");
   // Redirect the user to a different route.

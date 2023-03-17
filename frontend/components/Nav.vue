@@ -5,6 +5,24 @@
         <img src="/images/logo.png" alt="Accio logo" class="logo" />
       </NuxtLink>
       <!--Hide on md screens + eventlistener on click-->
+      <div>
+      <ul>
+        <li class="-mr-12 relative md:hidden">
+          <NuxtLink
+            to="/cart"
+            class="text-gray-700 text-lg font-bold tracking-wider hover:text-green-700"
+          >
+            <i class="fas fa-shopping-cart"></i>
+            <span
+              class="absolute top-0 right-0 -mt-1 -mr-4 w-4 h-4 bg-red-700 text-white text-xs flex items-center justify-center rounded-full"
+            >
+              {{ basketItemCount }}
+            </span>
+            Cart
+          </NuxtLink>
+        </li>
+      </ul>
+    </div>
       <div class="md:hidden">
         <span
           class="flex items-center focus:outline-none"
@@ -46,17 +64,25 @@
             >About</NuxtLink
           >
         </li>
-        <li class="mb-0">
+        <li class="relative mb-0">
           <NuxtLink
             to="/cart"
             class="text-gray-700 text-lg font-bold tracking-wider hover:text-green-700"
           >
             <i class="fas fa-shopping-cart"></i>
+            <span
+              class="absolute top-0 right-0 -mt-1 -mr-3.5 w-4 h-4 bg-red-700 text-white text-xs flex items-center justify-center rounded-full"
+            >
+              {{ basketItemCount }}
+            </span>
             Cart
           </NuxtLink>
         </li>
       </ul>
     </nav>
+
+
+    
     <!--hide on md screens-->
     <div class="md:hidden bg-white" :class="{ block: isOpen, hidden: !isOpen }">
       <ul class="px-4 py-3">
@@ -81,33 +107,29 @@
             >Products</NuxtLink
           >
         </li>
-        <li class="mb-0">
-          <NuxtLink
-            to="/cart"
-            class="text-gray-700 text-lg font-bold tracking-wider hover:text-green-700"
-          >
-            <i class="fas fa-shopping-cart"></i>
-            <!-- add cart icon here -->
-            Cart
-          </NuxtLink>
-        </li>
       </ul>
     </div>
   </header>
 </template>
 
 <script lang="ts">
+import basketStore from "~/store/basket";
+
 export default {
   data() {
     return {
       isOpen: false,
     };
   },
+  computed: {
+    basketItemCount() {
+      return basketStore.basket.quantity;
+    },
+  },
 };
 </script>
 
 <style scoped>
-
 .logo {
   height: 50px;
 }
