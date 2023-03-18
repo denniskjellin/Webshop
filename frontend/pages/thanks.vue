@@ -13,7 +13,7 @@
   </script>
   
   <style scoped>
-    /* Center the logo horizontally */
+    /*  Center the logo horizontally  */
     img {
       margin-left: auto;
       margin-right: auto;
