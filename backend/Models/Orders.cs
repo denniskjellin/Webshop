@@ -13,7 +13,7 @@ public class Orders
     public string Title { get; set; }
     public decimal Price { get; set; }
     [Display(Name = "Image URL")]
-    public string ImageName { get; set; }
+    public string Image{ get; set; }
     [Display(Name = "Alt Text")]
     public string ImageAlt { get; set; }
     public int Quantity { get; set; }

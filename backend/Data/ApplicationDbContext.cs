@@ -13,5 +13,7 @@ public class ApplicationDbContext : IdentityDbContext
 
     public DbSet<Product> Products { get; set; }
     public DbSet<Category> Categories { get; set; }
-    public DbSet<backend.Models.Orders> Orders { get; set; } = default!;
+
+    public DbSet<Orders> Orders { get; set; }
+    
 }

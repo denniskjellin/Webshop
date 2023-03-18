@@ -235,11 +235,11 @@ namespace backend.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("ImageAlt")
+                    b.Property<string>("Image")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("ImageName")
+                    b.Property<string>("ImageAlt")
                         .IsRequired()
                         .HasColumnType("TEXT");
 

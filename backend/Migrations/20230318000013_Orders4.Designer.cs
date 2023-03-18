@@ -11,8 +11,8 @@ using backend.Data;
 namespace backend.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230317230929_Orders")]
-    partial class Orders
+    [Migration("20230318000013_Orders4")]
+    partial class Orders4
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -238,11 +238,11 @@ namespace backend.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("ImageAlt")
+                    b.Property<string>("Image")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("ImageName")
+                    b.Property<string>("ImageAlt")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
