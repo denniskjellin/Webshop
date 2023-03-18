@@ -97,7 +97,7 @@ function removeFromBasket(index) {
 
 // Function to clear the basket and local storage after checkout.
 function checkout() {
-  const endpointUrl = 'http://localhost:5146/api/OrdersApi' // Replace with your actual API endpoint URL
+  const endpointUrl = 'http://localhost:5146/api/OrdersApi' 
   const requestOptions = {
     method: 'POST',
     headers: {
